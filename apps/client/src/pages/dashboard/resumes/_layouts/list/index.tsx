@@ -5,7 +5,7 @@ import { useResumes } from "@/client/services/resume";
 
 import { BaseListItem } from "./_components/base-item";
 import { CreateResumeListItem } from "./_components/create-item";
-import { ImportResumeListItem } from "./_components/import-item";
+// import { ImportResumeListItem } from "./_components/import-item";
 import { ResumeListItem } from "./_components/resume-item";
 
 export const ListView = () => {
@@ -17,12 +17,12 @@ export const ListView = () => {
         <CreateResumeListItem />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
-      >
-        <ImportResumeListItem />
-      </motion.div>
+      {/*<motion.div*/}
+      {/*  initial={{ opacity: 0, y: -50 }}*/}
+      {/*  animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}*/}
+      {/*>*/}
+      {/*  <ImportResumeListItem />*/}
+      {/*</motion.div>*/}
 
       {loading &&
         Array.from({ length: 4 }).map((_, i) => (

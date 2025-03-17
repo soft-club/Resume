@@ -1,30 +1,25 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-11-10 13:15+0100\n"
+"POT-Creation-Date: 2025-03-18 00:13+0500\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: uz\n"
-"Project-Id-Version: reactive-resume\n"
+"Language: uz-UZ\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-03 09:13\n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: Uzbek\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Crowdin-Project: reactive-resume\n"
-"X-Crowdin-Project-ID: 503410\n"
-"X-Crowdin-Language: uz\n"
-"X-Crowdin-File: messages.po\n"
-"X-Crowdin-File-ID: 494\n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:171
 msgid "You have enabled two-factor authentication successfully."
-msgstr "Ikki bosqichli shaxsni tasdiqlashni muvaffaqiyatli yoqdingiz."
+msgstr "Ikki bosqichli tekshirish yoqildi"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:57
 msgid "{templatesCount} resume templates to choose from"
-msgstr "Tanlash uchun {templatesCount} ta tarjimai hol namunasi mavjud"
+msgstr "{templatesCount} ta andoza mavjud"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:142
 msgid "{value, plural, one {Column} other {Columns}}"
@@ -32,58 +27,54 @@ msgstr "{value, plural, one {Ustun} other {Ustunlar}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
 msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr ""
+msgstr "<0>Men Reactive Resume'ni asosan bo'sh vaqtimda, boshqa ajoyib ochiq manba ishtirokchilari yordamida yaratdim.</0><1>Agar dastur sizga yoqsa va uni doimo bepul qolishini qo'llab-quvvatlasangiz, imkoningiz boricha xayriya qiling.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
-msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr ""
+msgstr "<0>Dastur mukammal emasligini bilaman, lekin shunday bo'lishini xohlayman.</0><1>Agar rezyume yaratishda muammolarga duch kelsangiz yoki rezyume yaratishni osonlashtirish bo'yicha g'oyalaringiz bo'lsa, GitHub'da muammo yarating yoki menga xat yozing.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
 msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
-msgstr ""
+msgstr "<0>Jamiyat Reactive Resume hujjatlarini yozishga ko'p vaqt sarfladi. Bu sizga dasturni o'rganishda yordam beradi.</0><1>Boshlash uchun ko'plab misollar va siz bilmagan, mukammal rezyume yaratishga yordam beradigan funksiyalar ham bor.</1>"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:137
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
-msgstr ""
+msgstr "<0>Ikki bosqichli tekshirish hozirda o'chirilgan.</0> Uni autentifikator ilovasini hisobingizga qo'shib yoqishingiz mumkin."
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:133
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:130
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
-msgstr ""
+msgstr "<0>Ikki bosqichli tekshirish yoqilgan.</0> Har safar tizimga kirishda kod kiritishingiz so'raladi."
 
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/home/sections/hero/index.tsx:40
 msgid "A free and open-source resume builder"
-msgstr ""
+msgstr "Bepul va ochiq kodli rezume yaratuvchi"
 
 #: apps/client/src/pages/home/components/footer.tsx:21
 #: apps/client/src/pages/home/sections/hero/index.tsx:45
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
-msgstr ""
+msgstr "Rezyume yaratish, yangilash va ulashishni osonlashtiruvchi bepul dastur"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
 msgid "A link has been copied to your clipboard."
-msgstr ""
+msgstr "Havola nusxalandi"
 
 #: apps/client/src/components/copyright.tsx:29
 msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr ""
+msgstr "<0>Amruth Pillai</0> loyihasi"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
-msgstr ""
+msgstr "Parolni tiklash havolasi yuborildi"
 
 #: apps/client/src/services/errors/translate-error.ts:43
 msgid "A resume with this slug already exists, please pick a different unique identifier."
-msgstr ""
+msgstr "Bunday nom band. Boshqa nom tanlang"
 
 #: apps/client/src/services/errors/translate-error.ts:10
 msgid "A user with this email address and/or username already exists."
-msgstr ""
+msgstr "Bunday foydalanuvchi mavjud"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:43
 msgid "A4"
@@ -92,21 +83,21 @@ msgstr "A4"
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
 msgid "Accepts only {accept} files"
-msgstr "Faqat {accept} fayllarini qabul qiladi"
+msgstr "Faqat {accept} fayllar qabul qilinadi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:104
 msgid "Account"
 msgstr "Hisob"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
 msgid "Add a custom field"
-msgstr "Maxsus maydon qo'shish"
+msgstr "Yangi maydon qo'shish"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-base.tsx:170
 msgctxt "For example, add a new work experience, or add a new profile."
 msgid "Add a new item"
-msgstr "Yangi narsa qo'shish"
+msgstr "Qo'shish"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:91
 msgid "Add a new item"
@@ -115,15 +106,15 @@ msgstr "Yangi narsa qo'shish"
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:146
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:263
 msgid "Add a new section"
-msgstr "Yangi bo'lim qo'shish"
+msgstr "Bo'lim qo'shish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
 msgid "Add New Page"
-msgstr "Yangi sahifa qo'shish"
+msgstr "Sahifa qo'shish"
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
-msgstr "SO"
+msgstr "Sun'iy intellekt"
 
 #: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
@@ -135,11 +126,11 @@ msgstr "Faylni tekshirishda xatolik yuz berdi."
 
 #: apps/client/src/pages/public/error.tsx:23
 msgid "An internal server error occurred."
-msgstr ""
+msgstr "Serverda ichki xatolik yuz berdi."
 
 #: apps/client/src/pages/public/error.tsx:32
 msgid "An unexpected error occurred."
-msgstr ""
+msgstr "Kutilmagan xatolik yuz berdi."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:134
 msgid "and many more..."
@@ -156,7 +147,7 @@ msgstr "Ushbu havolaga ega bo'lgan ixtiyoriy shaxs tarjimai holni ko'rishi va yu
 
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:41
 msgid "Apply Custom CSS"
-msgstr ""
+msgstr "Maxsus CSS qo'llash"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
@@ -168,7 +159,7 @@ msgstr "Haqiqatan ham tarjimai holingizni oʻchirmoqchimisiz?"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:125
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr "Ikki bosqichli shaxsni tasdiqlashni o‘chirib qo‘ymoqchimisiz?"
+msgstr "Ikki bosqichli shaxsni tasdiqlashni o'chirib qo'ymoqchimisiz?"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:38
 msgid "Are you sure you want to lock this resume?"
@@ -217,10 +208,6 @@ msgstr "Zaxira kodi"
 msgid "Backup Codes may contain only lowercase letters or numbers, and must be exactly 10 characters."
 msgstr "Zaxira kodlari faqat kichik harflar yoki raqamlardan iborat bo'lishi mumkin va aynan 10 belgidan iborat bo'lishi kerak."
 
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:132
-msgid "Base URL"
-msgstr ""
-
 #: apps/client/src/pages/builder/sidebars/left/index.tsx:55
 msgctxt "The basics section of a resume consists of User's Picture, Full Name, Location etc."
 msgid "Basics"
@@ -257,28 +244,28 @@ msgstr "Bekor qilish"
 #: apps/client/src/components/ai-actions.tsx:103
 #: apps/client/src/components/ai-actions.tsx:106
 msgid "Casual"
-msgstr ""
+msgstr "Oddiy"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:130
 msgid "Center Artboard"
-msgstr ""
+msgstr "Markazga joylashtirish"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:99
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:112
 msgid "Change Password"
-msgstr ""
+msgstr "Parolni o'zgartirish"
 
 #: apps/client/src/components/ai-actions.tsx:97
 msgid "Change Tone"
-msgstr ""
+msgstr "Uslubni o'zgartirish"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
-msgstr ""
+msgstr "Nomini o'zgartirasizmi? Yangi nom bering"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:70
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:69
 msgid "Check your email for the confirmation link to update your email address."
-msgstr ""
+msgstr "Email manzilingizni yangilash uchun tasdiqlash havolasini emailingizdan tekshiring"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
@@ -307,7 +294,7 @@ msgstr "Tashkilot"
 #: apps/client/src/components/ai-actions.tsx:115
 #: apps/client/src/components/ai-actions.tsx:118
 msgid "Confident"
-msgstr ""
+msgstr "Ishonchli"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:234
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:246
@@ -344,50 +331,49 @@ msgstr "Yangi buyum yasang"
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
-msgstr ""
+msgstr "Yangi rezyume yaratish"
 
 #: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
-msgstr ""
+msgstr "Hozir yarating"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
-msgstr ""
+msgstr "Namuna rezyume yaratish"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:79
 msgid "Current Password"
-msgstr ""
+msgstr "Joriy parol"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:93
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
-msgstr ""
+msgstr "Maxsus CSS"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:62
 msgid "Custom resume sections"
-msgstr ""
+msgstr "Maxsus rezyume bo'limlari"
 
 #: apps/client/src/stores/resume.ts:47
 msgid "Custom Section"
-msgstr ""
+msgstr "Maxsus bo'lim"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:60
 msgid "Customisable colour palettes"
-msgstr ""
+msgstr "Moslashtirilgan rang palitralari"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:61
 msgid "Customisable layouts"
-msgstr ""
+msgstr "Moslashtirilgan joylashuvlar"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:62
 msgid "Danger Zone"
 msgstr "Xavfli Hudud"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:87
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:76
 msgid "Dark"
-msgstr "To‘q"
+msgstr "To'q"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
@@ -414,7 +400,7 @@ msgstr "O'chirish"
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:79
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Delete Account"
-msgstr "Hisobni o‘chirish"
+msgstr "Hisobni o'chirish"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
@@ -426,20 +412,20 @@ msgstr "Ta'rif"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:58
 msgid "Design single/multi page resumes"
-msgstr "Yagona/Ko‘p sahifali tarjimai hollarni andozaga solish"
+msgstr "Yagona/Ko'p sahifali tarjimai hollarni andozaga solish"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:139
 msgid "Disable"
-msgstr "Oʻchirish"
+msgstr "O'chirish"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:154
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:151
 msgid "Disable 2FA"
-msgstr "2BShT (2FA)ni o`chirish"
+msgstr "2BShT (2FA)ni o'chirish"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:222
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:108
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:115
 msgid "Discard"
 msgstr "Bekor qilish"
 
@@ -455,21 +441,17 @@ msgstr "Hisobingiz yo'qmi?"
 msgid "Don't know where to begin? Hit the docs!"
 msgstr "Qayerdan boshlashni bilmayapsizmi? Hujjatlarni bosing!"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:107
-msgid "Don't see your language? <0>Help translate the app.</0>"
-msgstr ""
-
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
 msgid "Donate to Reactive Resume"
-msgstr ""
+msgstr "Reactive Resume'ni qo'llab-quvvatlang"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
-msgstr ""
+msgstr "Rezyumengizni JSON formatida saqlang. Bu faylni keyinchalik qayta yuklash yoki boshqalar bilan hamkorlik qilish uchun ishlatishingiz mumkin"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
-msgstr ""
+msgstr "Rezyumengizni PDF formatida yuklab oling. Bu faylni chop etish, ishga oluvchilarga yuborish yoki ish qidiruv saytlariga yuklash uchun ishlatishingiz mumkin"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:176
 msgid "Download PDF"
@@ -493,73 +475,85 @@ msgstr "Mavjud buyumni nusxalash"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:180
 msgid "Duplicate an existing resume"
-msgstr ""
+msgstr "Mavjud rezyumeni nusxalash"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
 msgid "Edit"
-msgstr ""
+msgstr "Tahrirlash"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:169
 msgid "Effects"
-msgstr ""
+msgstr "Effektlar"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:82
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:177
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:163
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:160
 msgid "Enable 2FA"
-msgstr ""
+msgstr "Ikki bosqichli tekshirishni yoqish"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
-msgstr ""
+msgstr "Yangi parol kiriting. Ishonchli parol tanlang"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
-msgstr ""
+msgstr "Ikki bosqichli tekshirishni yoqqaningizda saqlagan 10 ta zaxira koddan birini kiriting"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:63
 msgid "Enter Phosphor Icon"
-msgstr ""
+msgstr "Phosphor belgisini kiriting"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:170
 msgid "Enter the 6-digit code from your authenticator app to verify that 2FA has been setup correctly."
-msgstr ""
+msgstr "Ikki bosqichli tekshirish to'g'ri sozlanganini tekshirish uchun ilovangizdan 6 raqamli kodni kiriting"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:60
 msgid "Enter the one-time password provided by your authenticator app below."
-msgstr ""
+msgstr "Ilovangiz bergan bir martalik parolni kiriting"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:70
 msgid "Enter your email address and we will send you a link to reset your password if the account exists."
-msgstr ""
+msgstr "Email manzilingizni kiriting. Hisobingiz mavjud bo'lsa, parolni tiklash havolasini yuboramiz"
 
 #: apps/client/src/pages/public/error.tsx:46
 msgid "Error {statusCode}"
-msgstr ""
+msgstr "Xatolik {statusCode}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
 msgid "Errors"
-msgstr ""
+msgstr "Xatoliklar"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how Reactive Resume has helped you. Your feedback and support are always welcome and much appreciated!"
-msgstr ""
+msgstr "Pul bilan yordam bera olmasangiz ham, GitHub'da yulduzcha bosib, do'stlaringizga aytib yoki Reactive Resume qanday yordam berganini yozib yuborib qo'llab-quvvatlashingiz mumkin. Har qanday fikr va yordam muhim"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr ""
+msgstr "Reactive Resume andozalarini ko'ring va ular bilan yaratilgan rezyumelarni o'rganing. Bu andozalar sizga yangi rezyume yaratishda namuna bo'ladi"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
 msgid "Export"
 msgstr "Eksport"
+
+#: apps/client/src/services/openai/change-tone.ts:16
+msgid "Failed to change tone: {error}"
+msgstr "Uslubni o'zgartirib bo'lmadi: {error}"
+
+#: apps/client/src/services/openai/fix-grammar.ts:14
+msgid "Failed to fix grammar: {error}"
+msgstr "Grammatikani tuzatib bo'lmadi: {error}"
+
+#: apps/client/src/services/openai/improve-writing.ts:14
+msgid "Failed to improve writing: {error}"
+msgstr "Matnni yaxshilab bo'lmadi: {error}"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
 msgid "File"
@@ -571,35 +565,31 @@ msgstr "Fayl turi"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:38
 msgid "Finally,"
-msgstr ""
+msgstr "Va nihoyat,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
-msgstr ""
+msgstr "Imlo va grammatikani tuzatish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:107
 msgid "Font Family"
-msgstr ""
+msgstr "Shrift oilasi"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:148
 msgid "Font Size"
-msgstr ""
+msgstr "Shrift o'lchami"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:122
 msgid "Font Subset"
-msgstr ""
+msgstr "Shrift to'plami"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
 msgid "Font Variants"
-msgstr ""
+msgstr "Shrift turlari"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:35
 msgid "For example, information regarding which companies you sent this resume to or the links to the job descriptions can be noted down here."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:182
-msgid "Forget"
-msgstr ""
+msgstr "Masalan, bu rezyumeni qaysi kompaniyalarga yuborganingiz yoki ish tavsifi havolalarini shu yerga yozib qo'yishingiz mumkin"
 
 #: apps/client/src/pages/auth/login/page.tsx:131
 msgid "Forgot Password?"
@@ -612,28 +602,28 @@ msgstr "Parolingizni unutdingizmi?"
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:32
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:40
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:49
 msgid "Found a bug, or have an idea for a new feature?"
-msgstr ""
+msgstr "Xato topdingizmi yoki yangi funksiya haqida g'oyangiz bormi?"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:46
 msgid "Free, forever"
-msgstr "Bepul, har doim"
+msgstr "Doimo bepul"
 
 #: apps/client/src/components/ai-actions.tsx:121
 #: apps/client/src/components/ai-actions.tsx:124
 msgid "Friendly"
-msgstr ""
+msgstr "Do'stona"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:31
 msgid "Full Name"
-msgstr ""
+msgstr "To'liq ism"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
-msgstr ""
+msgstr "Rezyumengiz uchun tasodifiy nom yaratish"
 
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:32
 msgid "Get Started"
@@ -649,16 +639,16 @@ msgstr "GitHub yulduzlari"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
-msgstr ""
+msgstr "Eski rezyumengizga yangi nom bering"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:67
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:18
 msgid "Go to Dashboard"
-msgstr ""
+msgstr "Boshqaruv paneliga o'tish"
 
 #: apps/client/src/pages/public/error.tsx:55
 msgid "Go to home"
-msgstr ""
+msgstr "Bosh sahifaga o'tish"
 
 #: apps/client/src/pages/auth/_components/social-auth.tsx:31
 msgid "Google"
@@ -666,23 +656,15 @@ msgstr "Google"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
-msgstr ""
+msgstr "Oq-qora"
 
 #: apps/client/src/pages/dashboard/resumes/page.tsx:43
 msgid "Grid"
-msgstr ""
+msgstr "To'r"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Headline"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
-msgid "Here, you can update your account information such as your profile picture, name and username."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:68
-msgid "Here, you can update your profile to customize and personalize your experience."
-msgstr ""
+msgstr "Sarlavha"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:80
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:94
@@ -696,42 +678,42 @@ msgstr "Yashirish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:192
 msgid "Hide Icons"
-msgstr ""
+msgstr "Belgini berkitish"
 
 #: apps/client/src/pages/auth/login/page.tsx:115
 #: apps/client/src/pages/auth/register/page.tsx:168
 #: apps/client/src/pages/auth/reset-password/page.tsx:88
 msgid "Hold <0>Ctrl</0> to display your password temporarily."
-msgstr ""
+msgstr "Parolni vaqtincha ko'rsatish uchun <0>Ctrl</0> tugmasini bosib turing"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:93
 msgid "Horizontal"
-msgstr ""
+msgstr "Gorizontal"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:67
 msgid "Host your resume publicly"
-msgstr ""
+msgstr "Rezyumengizni ommaviy joylashtiring"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr ""
+msgstr "Reactive Resume foydalanuvchilarining fikr-mulohazalarini eshitishni yaxshi ko'raman. Mana, olgan xabarlarimdan ba'zilari. Agar fikringiz bo'lsa, menga <0>{email}</0> manziliga xat yozing"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
 msgid "Icon"
-msgstr ""
+msgstr "Belgi"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
-msgstr ""
+msgstr "Agar bu dastur ish topishingizga yordam bergan bo'lsa, <0>aloqa formasi</0> orqali menga xabar bering"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:128
 msgid "If you disable two-factor authentication, you will no longer be required to enter a verification code when logging in."
-msgstr ""
+msgstr "Ikki bosqichli tekshirishni o'chirsangiz, tizimga kirishda tasdiqlash kodi so'ralmaydi"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:59
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
-msgstr ""
+msgstr "Agar bir necha tilni bilsangiz, dasturni ko'proq tillarga tarjima qilishda yordam berishingizni xohlaymiz. Tilingizni ro'yxatda ko'rmasangiz, GitHub'da xabar bering, uni qo'shaman. Boshlashga tayyormisiz? Quyidagi havola orqali Crowdin'da tarjima qilishni boshlang"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
 msgid "Import"
@@ -741,23 +723,19 @@ msgstr "Import"
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
-msgstr ""
+msgstr "Mavjud rezyumeni import qilish"
 
 #: apps/client/src/components/ai-actions.tsx:85
 msgid "Improve Writing"
-msgstr ""
+msgstr "Yozuvni yaxshilash"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:188
 msgid "In case you are unable to scan this QR Code, you can also copy-paste this link into your authenticator app."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:67
-msgid "In this section, you can change your password and enable/disable two-factor authentication."
-msgstr ""
+msgstr "Agar QR-kodni skanerlay olmasangiz, bu havolani autentifikator ilovangizga nusxalab qo'yishingiz mumkin"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:64
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
-msgstr ""
+msgstr "Bu bo'limda hisobingiz va unga bog'liq barcha ma'lumotlarni o'chirishingiz mumkin, lekin <0>bu amalni qaytarib bo'lmasligini</0> unutmang"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
@@ -767,39 +745,39 @@ msgstr "Ma'lumot"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:39
 msgid "Institution"
-msgstr ""
+msgstr "O'quv muassasasi"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:53
 msgid "Issuer"
-msgstr ""
+msgstr "Beruvchi"
 
 #: apps/client/src/services/errors/translate-error.ts:7
 msgid "It doesn't look like a user exists with the credentials you provided."
-msgstr ""
+msgstr "Siz kiritgan ma'lumotlar bilan foydalanuvchi mavjud emasga o'xshaydi"
 
 #: apps/client/src/services/errors/translate-error.ts:37
 msgid "It looks like the backup code you provided is invalid or used. Please try again."
-msgstr ""
+msgstr "Siz kiritgan zaxira kodi yaroqsiz yoki ishlatilgan. Qayta urinib ko'ring"
 
 #: apps/client/src/services/errors/translate-error.ts:19
 msgid "It looks like the reset token you provided is invalid. Please try restarting the password reset process again."
-msgstr ""
+msgstr "Siz kiritgan tiklash tokeni yaroqsiz. Parolni tiklash jarayonini qayta boshlang"
 
 #: apps/client/src/services/errors/translate-error.ts:46
 msgid "It looks like the resume you're looking for doesn't exist."
-msgstr ""
+msgstr "Siz qidirayotgan rezyume mavjud emasga o'xshaydi"
 
 #: apps/client/src/services/errors/translate-error.ts:34
 msgid "It looks like the two-factor authentication code you provided is invalid. Please try again."
-msgstr ""
+msgstr "Siz kiritgan ikki bosqichli tekshirish kodi yaroqsiz. Qayta urinib ko'ring"
 
 #: apps/client/src/services/errors/translate-error.ts:22
 msgid "It looks like the verification token you provided is invalid. Please try restarting the verification process again."
-msgstr ""
+msgstr "Siz kiritgan tasdiqlash tokeni yaroqsiz. Tasdiqlash jarayonini qayta boshlang"
 
 #: apps/client/src/services/errors/translate-error.ts:25
 msgid "It looks like your email address has already been verified."
-msgstr ""
+msgstr "Email manzilingiz allaqon tasdiqlangan"
 
 #: apps/client/src/pages/auth/register/page.tsx:101
 msgctxt "Localized version of a placeholder name. For example, Max Mustermann in German or Jan Kowalski in Polish."
@@ -825,134 +803,126 @@ msgstr "JSON"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:159
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:109
 msgid "Keywords"
-msgstr "Kalit so’zlar"
+msgstr "Kalit so'zlar"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:42
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:52
 msgid "Label"
-msgstr ""
+msgstr "Nom"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:101
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:90
 msgid "Language"
-msgstr ""
+msgstr "Til"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:83
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:139
 msgid "Last updated {lastUpdated}"
-msgstr ""
+msgstr "So'nggi yangilanish: {lastUpdated}"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:72
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
-msgstr ""
+msgstr "Joylashuv"
 
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
 msgid "Learn more"
-msgstr ""
+msgstr "Batafsil"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
 msgid "Letter"
-msgstr ""
+msgstr "Xat"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:64
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:77
 msgid "Level"
-msgstr ""
+msgstr "Daraja"
 
 #: apps/client/src/components/copyright.tsx:16
 msgid "Licensed under <0>MIT</0>"
-msgstr ""
+msgstr "<0>MIT</0> litsenziyasi asosida"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:75
 msgid "Light"
-msgstr ""
+msgstr "Yorug'"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:69
 msgid "Light or dark theme"
-msgstr ""
+msgstr "Yorug' yoki to'q mavzu"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:165
 msgid "Line Height"
-msgstr ""
+msgstr "Qator balandligi"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:33
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:22
 msgid "LinkedIn, JSON Resume, etc."
-msgstr ""
+msgstr "LinkedIn, JSON Rezyume va boshqalar"
 
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
-msgstr ""
+msgstr "Ro'yxat"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:93
 msgid "Location"
-msgstr ""
+msgstr "Manzil"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:51
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:115
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:166
 msgid "Lock"
-msgstr ""
+msgstr "Qulflash"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:64
 msgid "Lock a resume to prevent editing"
-msgstr ""
+msgstr "Tahrirlashni oldini olish uchun rezyumeni qulflang"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:43
 msgid "Locking a resume will prevent any further changes to it. This is useful when you have already shared your resume with someone and you don't want to accidentally make any changes to it."
-msgstr ""
+msgstr "Qulflangan rezyumeni o'zgartirib bo'lmaydi. Bu rezyumeni birov bilan ulashganingizda foydali"
 
 #: apps/client/src/components/user-options.tsx:38
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:23
 msgid "Logout"
-msgstr ""
+msgstr "Chiqish"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:64
 msgid "Lost your device?"
-msgstr ""
+msgstr "Qurilmangizni yo'qotdingizmi?"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:247
 msgid "Main"
-msgstr ""
+msgstr "Asosiy"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
-msgstr ""
+msgstr "Bir nechta rezyumeni boshqarish"
 
 #. The month and year should be uniform across all languages.
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:71
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:69
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:69
 msgid "March 2023"
-msgstr ""
+msgstr "Mart 2023"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:112
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:74
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:103
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:69
 msgid "March 2023 - Present"
-msgstr ""
+msgstr "Mart 2023 - Hozirgi vaqtgacha"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:50
 msgid "Margin"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:158
-msgid "Max Tokens"
-msgstr ""
+msgstr "Chet"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:48
 msgid "MIT License"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:145
-msgid "Model"
-msgstr ""
+msgstr "MIT Litsenziyasi"
 
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
@@ -963,34 +933,34 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:149
 msgid "Name"
-msgstr ""
+msgstr "Ism"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:39
 msgctxt "Name of the Certification"
 msgid "Name"
-msgstr ""
+msgstr "Nomi"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:40
 msgid "Network"
-msgstr ""
+msgstr "Tarmoq"
 
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:96
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:93
 msgid "New Password"
 msgstr "Yangi parol"
 
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
-msgstr "Hech qanday natija topilmadi"
+msgstr "Natija topilmadi"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
-msgstr ""
+msgstr "Kuzatuv va reklamalar yo'q"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
-msgstr "Eslatma: Bu sizning hisobingiz xavfsizligini kamaytiradi."
+msgstr "Diqqat: Bu hisobingiz xavfsizligini kamaytiradi"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:128
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
@@ -1007,45 +977,31 @@ msgstr "Bir martalik parol"
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
-msgstr "Afsuski, serverda xatolik yuz berdi."
+msgstr "Xatolik yuz berdi"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:97
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:77
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:148
 msgid "Open"
-msgstr "Ochiq"
+msgstr "Ochish"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:47
 msgid "Open Source"
-msgstr ""
-
-#: apps/client/src/services/openai/change-tone.ts:35
-#: apps/client/src/services/openai/fix-grammar.ts:33
-#: apps/client/src/services/openai/improve-writing.ts:33
-msgid "OpenAI did not return any choices for your text."
-msgstr ""
+msgstr "Ochiq manba"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:52
 msgid "OpenAI Integration"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:119
-msgid "OpenAI/Ollama API Key"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:79
-msgid "OpenAI/Ollama Integration"
-msgstr ""
+msgstr "OpenAI bilan integratsiya"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
 msgid "Options"
-msgstr "Variantlar"
+msgstr "Sozlamalar"
 
 #: apps/client/src/pages/auth/layout.tsx:47
 msgctxt "The user can either login with email/password, or continue with GitHub or Google."
 msgid "or continue with"
-msgstr "yoki quyidagi bilan davom eting"
+msgstr "yoki davom eting"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:39
 msgid "Organization"
@@ -1059,12 +1015,12 @@ msgstr "Sahifa"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:228
 msgid "Page {pageNumber}"
-msgstr ""
+msgstr "{pageNumber}-sahifa"
 
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:70
 msgid "Password"
 msgstr "Parol"
 
@@ -1074,7 +1030,7 @@ msgstr "PDF"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
-msgstr "Har bir tarjimai hol uchun shaxsiy eslatmalar"
+msgstr "Har bir rezyume uchun shaxsiy eslatmalar"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 msgid "Phone"
@@ -1082,78 +1038,78 @@ msgstr "Telefon"
 
 #: apps/client/src/pages/auth/layout.tsx:76
 msgid "Photograph by Patrick Tomasso"
-msgstr ""
+msgstr "Suratchi: Patrick Tomasso"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
-msgstr ""
+msgstr "Google Fonts'dan istalgan shriftni tanlang"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/section.tsx:69
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:121
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:117
 msgid "Picture"
-msgstr ""
+msgstr "Rasm"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:59
 msgid "Please note that this step is completely optional."
-msgstr ""
+msgstr "Bu majburiy emas"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
 msgid "Please select a file type"
-msgstr ""
+msgstr "Fayl turini tanlang"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
-msgstr ""
+msgstr "Zaxira kodlarini xavfsiz joyda saqlang. Autentifikator ilovasiga kira olmasangiz, ulardan foydalanishingiz mumkin"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
-msgstr ""
+msgstr "Portret"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:54
 msgctxt "Position held at a company, for example, Software Engineer"
 msgid "Position"
-msgstr ""
+msgstr "Lavozim"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:53
 msgid "Position"
-msgstr ""
+msgstr "Lavozim"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:96
 msgid "Powered by"
-msgstr ""
+msgstr "Yordamida"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:94
 msgid "Powered by <0>Simple Icons</0>"
-msgstr ""
+msgstr "<0>Simple Icons</0> yordamida"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:43
 msgid "Primary Color"
-msgstr ""
+msgstr "Asosiy rang"
 
 #: apps/client/src/pages/home/components/footer.tsx:50
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Maxfiylik siyosati"
 
 #: apps/client/src/components/ai-actions.tsx:109
 #: apps/client/src/components/ai-actions.tsx:112
 msgid "Professional"
-msgstr ""
+msgstr "Professional"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:66
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:58
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
 msgid "Public"
-msgstr ""
+msgstr "Ommaviy"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:53
 msgid "Publisher"
-msgstr ""
+msgstr "Nashriyot"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:69
 msgid "Raise an issue"
-msgstr ""
+msgstr "Muammo haqida xabar berish"
 
 #: apps/client/src/components/copyright.tsx:35
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
@@ -1165,70 +1121,70 @@ msgstr ""
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/builder/page.tsx:60
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
+#: apps/client/src/pages/dashboard/settings/page.tsx:15
 #: apps/client/src/pages/home/components/footer.tsx:18
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
 msgid "Reactive Resume"
-msgstr ""
+msgstr "Reactive Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr ""
+msgstr "Reactive Resume yordamida odamlar bu kompaniyalarda ish topishdi:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr ""
+msgstr "Reactive Resume - bu bepul va ochiq kodli loyiha. Qo'llab-quvvatlashingiz muhim. Imkoningiz bo'lsa, xayriya qilishingiz mumkin"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr ""
+msgstr "Reactive Resume 3 yillik mehnat mahsuli. Bu vaqt davomida ko'plab g'oyalar va funksiyalar mukammallashtirildi"
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr ""
+msgstr "Reactive Resume faol jamiyat tufayli rivojlanmoqda. GitHub va Crowdin'dagi ko'plab ishtirokchilar loyihani yaxshilashga yordam berishdi"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
-msgstr ""
+msgstr "Qaytarish"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
 msgid "Remove"
-msgstr ""
+msgstr "O'chirish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:231
 msgid "Remove Page"
-msgstr ""
+msgstr "Sahifani o'chirish"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:111
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:101
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:86
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:152
 msgid "Rename"
-msgstr ""
+msgstr "Qayta nomlash"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:199
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:204
 msgid "Resend email confirmation link"
-msgstr ""
+msgstr "Tasdiqlash havolasini qayta yuborish"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:152
 msgid "Reset"
-msgstr ""
+msgstr "Tiklash"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:201
 msgid "Reset Layout"
-msgstr ""
+msgstr "Joylashuvni tiklash"
 
 #: apps/client/src/pages/auth/reset-password/page.tsx:60
 #: apps/client/src/pages/auth/reset-password/page.tsx:65
 msgid "Reset your password"
-msgstr ""
+msgstr "Parolni tiklash"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:124
 msgid "Reset Zoom"
-msgstr ""
+msgstr "Masshtabni tiklash"
 
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
@@ -1238,207 +1194,199 @@ msgstr "Rezyumelar"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:14
 msgid "Resumes Generated"
-msgstr ""
+msgstr "Yaratilgan rezyumelar"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:105
 msgid "Rich in features, not in pricing."
-msgstr ""
+msgstr "Ko'p imkoniyatlar - bepul"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
-msgstr ""
+msgstr "Yumaloq"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:217
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:219
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:105
 msgid "Save Changes"
-msgstr "O'zgarishlarni saqlash"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
-msgid "Save Locally"
-msgstr "Mahalliy saqlash"
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:176
-msgid "Saved"
-msgstr "Saqlandi"
+msgstr "Saqlash"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:168
 msgid "Scan the QR code below with your authenticator app to setup 2FA on your account."
-msgstr ""
+msgstr "Hisobingizda 2FA'ni sozlash uchun quyidagi QR-kodni autentifikator ilovangiz bilan skanerlang"
 
 #. Score or honors for the degree, for example, CGPA or magna cum laude
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:92
 msgid "Score"
-msgstr ""
+msgstr "Ball"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Pan"
-msgstr ""
+msgstr "Siljitish uchun aylantiring"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:104
 msgid "Scroll to Zoom"
-msgstr ""
+msgstr "Kattalashtirish uchun aylantiring"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
 msgid "Search for a font family"
-msgstr ""
+msgstr "Shrift oilasini qidiring"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
 msgid "Search for a font subset"
-msgstr ""
+msgstr "Shrift to'plamini qidiring"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:139
 msgid "Search for a font variant"
-msgstr ""
+msgstr "Shrift turini qidiring"
 
 #: apps/client/src/components/locale-combobox.tsx:41
 msgid "Search for a language"
-msgstr ""
+msgstr "Tilni qidiring"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:56
 msgid "Secure with two-factor authentication"
-msgstr ""
+msgstr "Ikki bosqichli tekshirish bilan himoyalangan"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
-msgstr ""
+msgstr "Xavfsizlik"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
-msgstr ""
+msgstr "Docker orqali o'zingiz joylashtiring"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:104
 msgid "Send Email"
-msgstr ""
+msgstr "Xat yuborish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:74
 msgid "Send me a message"
-msgstr ""
+msgstr "Menga xabar yozing"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:97
 msgid "Separate Links"
-msgstr ""
+msgstr "Alohida havolalar"
 
 #: apps/client/src/components/user-options.tsx:32
 #: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/settings/page.tsx:15
+#: apps/client/src/pages/dashboard/settings/page.tsx:25
 msgid "Settings"
-msgstr ""
+msgstr "Sozlamalar"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:159
 msgid "Setup two-factor authentication on your account"
-msgstr ""
+msgstr "Hisobingizda ikki bosqichli tekshirishni sozlang"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:107
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
 msgid "Sharing"
-msgstr ""
+msgstr "Ulashish"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:106
 msgid "Show"
-msgstr ""
+msgstr "Ko'rsatish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:78
 msgid "Show Break Line"
-msgstr ""
+msgstr "Ajratuvchi chiziqni ko'rsatish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:91
 msgid "Show Page Numbers"
-msgstr ""
+msgstr "Sahifa raqamlarini ko'rsatish"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:248
 msgid "Sidebar"
-msgstr ""
+msgstr "Yon panel"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:103
 #: apps/client/src/pages/auth/login/page.tsx:127
 #: apps/client/src/pages/auth/verify-otp/page.tsx:92
 msgid "Sign in"
-msgstr ""
+msgstr "Kirish"
 
 #: apps/client/src/pages/auth/register/page.tsx:74
 msgid "Sign in now"
-msgstr ""
+msgstr "Hozir kiring"
 
 #: apps/client/src/pages/auth/login/page.tsx:55
 #: apps/client/src/pages/auth/login/page.tsx:60
 msgid "Sign in to your account"
-msgstr ""
+msgstr "Hisobingizga kiring"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:55
 msgid "Sign in with Email"
-msgstr ""
+msgstr "Email orqali kirish"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:53
 msgid "Sign in with GitHub"
-msgstr ""
+msgstr "GitHub orqali kirish"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:54
 msgid "Sign in with Google"
-msgstr ""
+msgstr "Google orqali kirish"
 
 #: apps/client/src/pages/auth/register/page.tsx:179
 msgid "Sign up"
-msgstr ""
+msgstr "Ro'yxatdan o'tish"
 
 #: apps/client/src/pages/auth/login/page.tsx:74
 msgid "Signing in via email is currently disabled by the administrator."
-msgstr ""
+msgstr "Email orqali kirish administrator tomonidan o'chirib qo'yilgan"
 
 #: apps/client/src/pages/auth/register/page.tsx:82
 msgid "Signups are currently disabled by the administrator."
-msgstr ""
+msgstr "Ro'yxatdan o'tish administrator tomonidan o'chirib qo'yilgan"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:65
 msgid "Size (in px)"
-msgstr ""
+msgstr "O'lcham (px)"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:228
 msgid "Slug"
-msgstr ""
+msgstr "URL manzil"
 
 #: apps/client/src/services/errors/translate-error.ts:55
 msgid "Something went wrong while grabbing a preview your resume. Please try again later or raise an issue on GitHub."
-msgstr ""
+msgstr "Rezyumengiz ko'rinishini olishda xatolik yuz berdi. Keyinroq qayta urinib ko'ring yoki GitHub'da muammo yarating"
 
 #: apps/client/src/services/errors/translate-error.ts:52
 msgid "Something went wrong while printing your resume. Please try again later or raise an issue on GitHub."
-msgstr ""
+msgstr "Rezyumengizni chop etishda xatolik yuz berdi. Keyinroq qayta urinib ko'ring yoki GitHub'da muammo yarating"
 
 #: apps/client/src/services/errors/translate-error.ts:58
 msgid "Something went wrong while processing your request. Please try again later or raise an issue on GitHub."
-msgstr ""
+msgstr "So'rovingizni qayta ishlashda xatolik yuz berdi. Keyinroq qayta urinib ko'ring yoki GitHub'da muammo yarating"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:132
 msgid "Square"
-msgstr ""
+msgstr "Kvadrat"
 
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:33
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:23
 msgid "Start building from scratch"
-msgstr ""
+msgstr "Noldan boshlash"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:185
 msgid "Start building your resume by giving it a name."
-msgstr ""
+msgstr "Rezyumengizni yaratishni nom berishdan boshlang"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:114
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
-msgstr ""
+msgstr "Statistika"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:38
 msgid "Statistics are available only for public resumes."
-msgstr ""
+msgstr "Statistika faqat ommaviy rezyumelar uchun mavjud"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
-msgstr ""
+msgstr "Zaxira kodlaringizni xavfsiz saqlang"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:95
@@ -1450,245 +1398,245 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:81
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:109
 msgid "Summary"
-msgstr ""
+msgstr "Qisqacha ma'lumot"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
 msgid "Support the app by donating what you can!"
-msgstr ""
+msgstr "Imkoningiz boricha loyihani qo'llab-quvvatlang!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr ""
+msgstr "Reactive Resume'ni qo'llab-quvvatlash"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
-msgstr ""
+msgstr "A4/Letter formatlarini qo'llab-quvvatlaydi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:85
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:74
 msgid "System"
-msgstr ""
+msgstr "Tizim"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:65
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
-msgstr ""
+msgstr "Andoza"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:9
 msgid "Templates"
-msgstr ""
+msgstr "Andozalar"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:68
 msgid "Testimonials"
-msgstr ""
+msgstr "Fikrlar"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:103
 msgid "Text Color"
-msgstr ""
+msgstr "Matn rangi"
 
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
-msgstr ""
+msgstr "Siz qidirayotgan sahifa mavjud emas"
 
 #: apps/client/src/pages/public/error.tsx:29
 msgid "The request was invalid."
-msgstr ""
+msgstr "So'rov noto'g'ri"
 
 #: apps/client/src/services/errors/translate-error.ts:49
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
-msgstr ""
+msgstr "O'zgartirmoqchi bo'lgan rezyumengiz qulflangan. O'zgartirish uchun qulfni oching"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:86
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
-#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
+#: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:68
 msgid "Theme"
-msgstr ""
+msgstr "Mavzu"
 
 #: apps/client/src/services/errors/translate-error.ts:40
 msgid "There was an error connecting to the browser. Please make sure 'chrome' is running and reachable."
-msgstr ""
+msgstr "Brauzer bilan bog'lanishda xatolik yuz berdi. Chrome ishlab turganini tekshiring"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:130
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
-msgstr ""
+msgstr "Bu amalni asboblar panelidagi 'bekor qilish' tugmasi bilan qaytarish mumkin"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
-msgstr ""
+msgstr "Bu amalni qaytarib bo'lmaydi. Rezyumengiz butunlay o'chiriladi va uni qayta tiklab bo'lmaydi"
 
 #: apps/client/src/services/errors/translate-error.ts:16
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
-msgstr ""
+msgstr "Bu email OAuth hisobi bilan bog'langan. OAuth provayderi orqali kiring"
 
 #: apps/client/src/pages/builder/_components/header.tsx:57
 msgid "This resume is locked, please unlock to make further changes."
-msgstr ""
+msgstr "Bu rezyume qulflangan. O'zgartirish kiritish uchun qulfdan chiqaring"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:23
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
-msgstr ""
+msgstr "Bu bo'lim ushbu rezyumega oid shaxsiy eslatmalaringiz uchun. Bu yerdagi ma'lumotlar shaxsiy va boshqalarga ko'rsatilmaydi"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
-msgstr ""
+msgstr "Maslahat: Rezyumeni siz topshirayotgan lavozim nomiga mos nomlashingiz mumkin"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:39
 msgctxt "Name of the Award"
 msgid "Title"
-msgstr ""
+msgstr "Nomi"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:196
 msgid "Title"
-msgstr ""
+msgstr "Nomi"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:138
 msgid "Toggle Page Break Line"
-msgstr ""
+msgstr "Sahifa ajratuvchi chiziqni yoqish/o'chirish"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:150
 msgid "Toggle Page Numbers"
-msgstr ""
+msgstr "Sahifa raqamlarini yoqish/o'chirish"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
-msgstr ""
+msgstr "Ko'rishlar va yuklab olishlarni kuzatish"
 
 #: apps/client/src/pages/auth/verify-otp/page.tsx:52
 #: apps/client/src/pages/auth/verify-otp/page.tsx:57
-#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:129
+#: apps/client/src/pages/dashboard/settings/_sections/security.tsx:126
 msgid "Two-Factor Authentication"
-msgstr ""
+msgstr "Ikki bosqichli tekshirish"
 
 #: apps/client/src/services/errors/translate-error.ts:31
 msgid "Two-factor authentication is already enabled for this account."
-msgstr ""
+msgstr "Bu hisobda ikki bosqichli tekshirish allaqachon yoqilgan"
 
 #: apps/client/src/services/errors/translate-error.ts:28
 msgid "Two-factor authentication is not enabled for this account."
-msgstr ""
+msgstr "Bu hisobda ikki bosqichli tekshirish yoqilmagan"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:84
 msgid "Type <0>delete</0> to confirm deleting your account."
-msgstr ""
+msgstr "Hisobingizni o'chirishni tasdiqlash uchun <0>delete</0> so'zini yozing"
 
 #. For example, Bachelor's Degree or Master's Degree
 #: apps/client/src/pages/builder/sidebars/left/dialogs/education.tsx:54
 msgid "Type of Study"
-msgstr ""
+msgstr "Ta'lim turi"
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:79
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:76
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:77
 msgid "Typography"
-msgstr ""
+msgstr "Tipografika"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:203
 msgid "Underline Links"
-msgstr ""
+msgstr "Havolalarni tagiga chizish"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
-msgstr ""
+msgstr "Bekor qilish"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:110
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:161
 msgid "Unlock"
-msgstr ""
+msgstr "Qulfdan chiqarish"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:44
 msgid "Unlocking a resume will allow you to make changes to it again."
-msgstr ""
+msgstr "Qulfdan chiqarilgan rezyumeni qayta tahrirlash mumkin bo'ladi"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:189
 msgid "Unverified"
-msgstr ""
+msgstr "Tasdiqlanmagan"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
-msgstr ""
+msgstr "Mavjud elementni yangilash"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:179
 msgid "Update an existing resume"
-msgstr ""
+msgstr "Mavjud rezyumeni yangilash"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr ""
+msgstr "Mavjud ma'lumotlarni Reactive Resume'ga import qilish uchun qabul qilingan formatlardan birida fayl yuklang"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/url-input.tsx:61
 msgid "URL must start with https://"
-msgstr ""
+msgstr "URL https:// bilan boshlanishi kerak"
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:52
 #: apps/client/src/pages/auth/backup-otp/page.tsx:57
 msgid "Use your backup code"
-msgstr ""
+msgstr "Zaxira kodingizdan foydalaning"
 
 #: apps/client/src/services/errors/translate-error.ts:13
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
-msgstr ""
+msgstr "Foydalanuvchining 'secrets' yozuvi mavjud emas. Bu muammo haqida GitHub'da xabar bering"
 
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:167
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:163
 msgid "Username"
-msgstr ""
+msgstr "Foydalanuvchi nomi"
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:13
 msgid "Users Signed Up"
-msgstr ""
+msgstr "Ro'yxatdan o'tgan foydalanuvchilar"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
 msgid "Validate"
-msgstr ""
+msgstr "Tekshirish"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
 msgid "Validated"
-msgstr ""
+msgstr "Tekshirildi"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:97
 msgid "Value"
-msgstr ""
+msgstr "Qiymat"
 
-#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
+#: apps/client/src/pages/dashboard/settings/_sections/account.tsx:189
 msgid "Verified"
-msgstr ""
+msgstr "Tasdiqlangan"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:161
 msgid "Verify that two-factor authentication has been setup correctly"
-msgstr ""
+msgstr "Ikki bosqichli tekshirish to'g'ri sozlanganini tekshiring"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:43
 #: apps/client/src/pages/auth/verify-email/page.tsx:48
 msgid "Verify your email address"
-msgstr ""
+msgstr "Email manzilingizni tasdiqlang"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:26
 msgid "Version 4"
-msgstr ""
+msgstr "4-versiya"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
-msgstr ""
+msgstr "Ko'rishlar"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:87
 msgid "Visible"
-msgstr ""
+msgstr "Ko'rinadigan"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:70
 msgid "Visit <0>Phosphor Icons</0> for a list of available icons"
-msgstr ""
+msgstr "Mavjud belgilar ro'yxatini ko'rish uchun <0>Phosphor Icons</0>ga tashrif buyuring"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:61
 msgid "We verify your email address only to ensure that we can send you a password reset link in case you forget your password."
-msgstr ""
+msgstr "Email manzilingizni faqat parolingizni unutgan holatda tiklash havolasini yuborish uchun tasdiqlaymiz"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:87
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:81
@@ -1702,81 +1650,64 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
 msgid "Website"
-msgstr ""
+msgstr "Veb-sayt"
 
 #: apps/client/src/pages/home/sections/hero/index.tsx:32
 msgid "What's new in the latest version"
-msgstr ""
+msgstr "Yangi versiyada nimalar o'zgardi"
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
-msgstr ""
+msgstr "Bu sahifaga kirishga ruxsatingiz yo'q"
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:68
 #: apps/client/src/pages/builder/sidebars/left/dialogs/projects.tsx:164
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:114
 msgid "You can add multiple keywords by separating them with a comma or pressing enter."
-msgstr ""
+msgstr "Kalit so'zlarni vergul bilan ajratib yoki Enter tugmasini bosib kiritishingiz mumkin"
 
 #: apps/client/src/pages/auth/login/page.tsx:99
 msgid "You can also enter your username."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:103
-msgid "You can also integrate with Ollama simply by setting the API key to `sk-1234567890abcdef` and the Base URL to your Ollama URL, i.e. `http://localhost:11434/v1`. You can also pick and choose models and set the max tokens as per your preference."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:81
-msgid "You can make use of the OpenAI API to help you generate content, or improve your writing while composing your resume."
-msgstr ""
+msgstr "Foydalanuvchi nomingizni ham kiritishingiz mumkin"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:40
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
-msgstr ""
+msgstr "Ommaviy ulashishni yoqib, rezyumengizni necha kishi ko'rganini va yuklab olganini kuzatishingiz mumkin"
 
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
-msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr ""
+msgstr "Bu sahifaga kirishga ruxsatingiz yo'q"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr ""
+msgstr "<0>Reactive Resume</0>dan hisobingizni tasdiqlash havolasi bilan xat olgan bo'lishingiz kerak"
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54
 msgid "You've got mail!"
-msgstr ""
+msgstr "Xat yuborildi!"
 
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:52
 msgid "Your account and all your data has been deleted successfully. Goodbye!"
-msgstr ""
-
-#: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
-msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
-msgstr ""
+msgstr "Hisobingiz va barcha ma'lumotlaringiz o'chirildi. Xayr!"
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
-msgstr ""
+msgstr "Email manzilingiz tasdiqlandi"
 
 #: apps/client/src/services/openai/client.ts:11
 msgid "Your OpenAI API Key has not been set yet. Please go to your account settings to enable OpenAI Integration."
-msgstr ""
+msgstr "OpenAI API kaliti o'rnatilmagan. OpenAI integratsiyasini yoqish uchun hisob sozlamalariga o'ting"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:56
 msgid "Your password has been updated successfully."
-msgstr ""
+msgstr "Parolingiz yangilandi"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:112
 msgid "Zoom In"
-msgstr ""
+msgstr "Kattalashtirish"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
-msgstr ""
-
+msgstr "Kichiklashtirish"

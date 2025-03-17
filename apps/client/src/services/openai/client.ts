@@ -12,16 +12,18 @@ export const openai = () => {
     );
   }
 
-  if (baseURL) {
-    return new OpenAI({
-      apiKey,
-      baseURL,
-      dangerouslyAllowBrowser: true,
-    });
-  }
+  const defaultBaseURL = "/api/gemini";
 
   return new OpenAI({
     apiKey,
+    baseURL: baseURL ?? defaultBaseURL,
     dangerouslyAllowBrowser: true,
+    defaultHeaders: {
+      "Access-Control-Allow-Origin": "*",
+      // eslint-disable-next-line lingui/no-unlocalized-strings
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      // eslint-disable-next-line lingui/no-unlocalized-strings
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    },
   });
 };

@@ -11,6 +11,7 @@ import { ConfigModule } from "./config/config.module";
 import { ContributorsModule } from "./contributors/contributors.module";
 import { DatabaseModule } from "./database/database.module";
 import { FeatureModule } from "./feature/feature.module";
+import { GeminiModule } from "./gemini/gemini.module";
 import { HealthModule } from "./health/health.module";
 import { MailModule } from "./mail/mail.module";
 import { PrinterModule } from "./printer/printer.module";
@@ -37,16 +38,17 @@ import { UserModule } from "./user/user.module";
     FeatureModule,
     TranslationModule,
     ContributorsModule,
+    GeminiModule,
 
     // Static Assets
     ServeStaticModule.forRoot({
       serveRoot: "/artboard",
-      // eslint-disable-next-line unicorn/prefer-module
+
       rootPath: path.join(__dirname, "..", "artboard"),
     }),
     ServeStaticModule.forRoot({
       renderPath: "/*",
-      // eslint-disable-next-line unicorn/prefer-module
+
       rootPath: path.join(__dirname, "..", "client"),
     }),
   ],

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /// <reference types='vitest' />
 
 import { lingui } from "@lingui/vite-plugin";
@@ -21,6 +22,12 @@ export default defineConfig({
     host: true,
     port: 5173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      }
+    }
   },
 
   optimizeDeps: {

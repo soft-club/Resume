@@ -63,9 +63,6 @@ export const SecuritySettings = () => {
     <div className="space-y-6">
       <div>
         <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Security`}</h3>
-        <p className="leading-relaxed opacity-75">
-          {t`In this section, you can change your password and enable/disable two-factor authentication.`}
-        </p>
       </div>
 
       <Accordion type="multiple" defaultValue={["password", "two-factor"]}>

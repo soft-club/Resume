@@ -1,3 +1,4 @@
+// import { t } from "@lingui/macro";
 import { z } from "zod";
 
 import type { FilterKeys } from "../shared";
@@ -105,6 +106,7 @@ export const defaultSection: Section = {
 
 export const defaultSections: Sections = {
   summary: { ...defaultSection, id: "summary", name: "Summary", content: "" },
+  // summary: { ...defaultSection, id: "summary", name: t`Summary`, content: "" },
   awards: { ...defaultSection, id: "awards", name: "Awards", items: [] },
   certifications: { ...defaultSection, id: "certifications", name: "Certifications", items: [] },
   education: { ...defaultSection, id: "education", name: "Education", items: [] },

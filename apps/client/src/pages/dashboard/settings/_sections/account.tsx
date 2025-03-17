@@ -8,7 +8,6 @@ import {
   buttonVariants,
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -103,9 +102,6 @@ export const AccountSettings = () => {
     <div className="space-y-6">
       <div>
         <h3 className="text-2xl font-bold leading-relaxed tracking-tight">{t`Account`}</h3>
-        <p className="leading-relaxed opacity-75">
-          {t`Here, you can update your account information such as your profile picture, name and username.`}
-        </p>
       </div>
 
       <Form {...form}>
@@ -182,27 +178,33 @@ export const AccountSettings = () => {
                 <FormControl>
                   <Input type="email" autoComplete="email" className="lowercase" {...field} />
                 </FormControl>
-                <FormDescription
-                  className={cn(
-                    "flex items-center gap-x-1.5 font-medium opacity-100",
-                    user.emailVerified ? "text-success-accent" : "text-warning-accent",
-                  )}
-                >
-                  {user.emailVerified ? <Check size={12} /> : <Warning size={12} />}
-                  {user.emailVerified ? t`Verified` : t`Unverified`}
-                  {!user.emailVerified && (
-                    <Button
-                      variant="link"
-                      className="h-auto text-xs"
-                      onClick={onResendVerificationEmail}
-                    >
-                      {t`Resend email confirmation link`}
-                    </Button>
-                  )}
-                </FormDescription>
+                <div className="mt-1 flex items-center justify-between">
+                  <div
+                    className={cn(
+                      "flex items-center gap-x-1.5 text-xs font-medium",
+                      user.emailVerified ? "text-success-accent" : "text-warning-accent",
+                    )}
+                  >
+                    {user.emailVerified ? <Check size={12} /> : <Warning size={12} />}
+                    {user.emailVerified ? t`Verified` : t`Unverified`}
+                  </div>
+                </div>
+                <FormMessage />
               </FormItem>
             )}
           />
+
+          <div className="mt-1 flex items-center justify-between">
+            {!user.emailVerified && (
+              <Button
+                variant="link"
+                className="h-auto whitespace-nowrap text-xs"
+                onClick={onResendVerificationEmail}
+              >
+                {t`Resend email confirmation link`}
+              </Button>
+            )}
+          </div>
 
           <AnimatePresence presenceAffectsLayout>
             {form.formState.isDirty && (

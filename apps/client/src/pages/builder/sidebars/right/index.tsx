@@ -2,12 +2,12 @@ import { t } from "@lingui/macro";
 import { ScrollArea, Separator } from "@reactive-resume/ui";
 import { useRef } from "react";
 
-import { Copyright } from "@/client/components/copyright";
+// import { Copyright } from "@/client/components/copyright";
 import { ThemeSwitch } from "@/client/components/theme-switch";
 
-import { CssSection } from "./sections/css";
+// import { CssSection } from "./sections/css";
 import { ExportSection } from "./sections/export";
-import { InformationSection } from "./sections/information";
+// import { InformationSection } from "./sections/information";
 import { LayoutSection } from "./sections/layout";
 import { NotesSection } from "./sections/notes";
 import { PageSection } from "./sections/page";
@@ -38,7 +38,7 @@ export const RightSidebar = () => {
           <Separator />
           <ThemeSection />
           <Separator />
-          <CssSection />
+          {/*<CssSection />*/}
           <Separator />
           <PageSection />
           <Separator />
@@ -49,10 +49,10 @@ export const RightSidebar = () => {
           <ExportSection />
           <Separator />
           <NotesSection />
-          <Separator />
-          <InformationSection />
-          <Separator />
-          <Copyright className="text-center" />
+          {/*<Separator />*/}
+          {/*<InformationSection />*/}
+          {/*<Separator />*/}
+          {/*<Copyright className="text-center" />*/}
         </div>
       </ScrollArea>
 
@@ -88,13 +88,13 @@ export const RightSidebar = () => {
               scrollIntoView("#theme");
             }}
           />
-          <SectionIcon
-            id="css"
-            name={t`Custom CSS`}
-            onClick={() => {
-              scrollIntoView("#css");
-            }}
-          />
+          {/*<SectionIcon*/}
+          {/*  id="css"*/}
+          {/*  name={t`Custom CSS`}*/}
+          {/*  onClick={() => {*/}
+          {/*    scrollIntoView("#css");*/}
+          {/*  }}*/}
+          {/*/>*/}
           <SectionIcon
             id="page"
             name={t`Page`}
@@ -141,6 +141,7 @@ export const RightSidebar = () => {
 
         <ThemeSwitch size={14} />
       </div>
+
     </div>
   );
 };
