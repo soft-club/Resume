@@ -106,7 +106,6 @@ export const defaultSection: Section = {
 
 export const defaultSections: Sections = {
   summary: { ...defaultSection, id: "summary", name: "Summary", content: "" },
-  // summary: { ...defaultSection, id: "summary", name: t`Summary`, content: "" },
   awards: { ...defaultSection, id: "awards", name: "Awards", items: [] },
   certifications: { ...defaultSection, id: "certifications", name: "Certifications", items: [] },
   education: { ...defaultSection, id: "education", name: "Education", items: [] },
@@ -120,6 +119,57 @@ export const defaultSections: Sections = {
   references: { ...defaultSection, id: "references", name: "References", items: [] },
   skills: { ...defaultSection, id: "skills", name: "Skills", items: [] },
   custom: {},
+};
+
+
+export const defaultSectionsRussian: Sections = {
+  summary: { ...defaultSection, id: "summary", name: "Обо мне", content: "" },
+  awards: { ...defaultSection, id: "awards", name: "Награды", items: [] },
+  certifications: { ...defaultSection, id: "certifications", name: "Сертификаты", items: [] },
+  education: { ...defaultSection, id: "education", name: "Образование", items: [] },
+  experience: { ...defaultSection, id: "experience", name: "Опыт", items: [] },
+  volunteer: { ...defaultSection, id: "volunteer", name: "Волонтерство", items: [] },
+  interests: { ...defaultSection, id: "interests", name: "Интересы", items: [] },
+  languages: { ...defaultSection, id: "languages", name: "Языки", items: [] },
+  profiles: { ...defaultSection, id: "profiles", name: "Профили", items: [] },
+  projects: { ...defaultSection, id: "projects", name: "Проекты", items: [] },
+  publications: { ...defaultSection, id: "publications", name: "Публикации", items: [] },
+  references: { ...defaultSection, id: "references", name: "Отзывы", items: [] },
+  skills: { ...defaultSection, id: "skills", name: "Навыки", items: [] },
+  custom: {},
+};
+
+export const defaultSectionsUzbek: Sections = {
+  summary: { ...defaultSection, id: "summary", name: "Mening haqimda", content: "" },
+  awards: { ...defaultSection, id: "awards", name: "Mukofotlar", items: [] },
+  certifications: { ...defaultSection, id: "certifications", name: "Sertifikatlar", items: [] },
+  education: { ...defaultSection, id: "education", name: "Ta'lim", items: [] },
+  experience: { ...defaultSection, id: "experience", name: "Ish tajribasi", items: [] },
+  volunteer: { ...defaultSection, id: "volunteer", name: "Ko'ngillilik", items: [] },
+  interests: { ...defaultSection, id: "interests", name: "Qiziqishlar", items: [] },
+  languages: { ...defaultSection, id: "languages", name: "Tillar", items: [] },
+  profiles: { ...defaultSection, id: "profiles", name: "Profillar", items: [] },
+  projects: { ...defaultSection, id: "projects", name: "Loyihalar", items: [] },
+  publications: { ...defaultSection, id: "publications", name: "Nashrlar", items: [] },
+  references: { ...defaultSection, id: "references", name: "Tavsiyalar", items: [] },
+  skills: { ...defaultSection, id: "skills", name: "Ko'nikmalar", items: [] },
+  custom: {},
+};
+
+export type ResumeVariant = "en" | "ru" | "uz";
+
+export const getSectionsByVariant = (variant: ResumeVariant): Sections => {
+  switch (variant) {
+    case "ru": {
+      return defaultSectionsRussian;
+    }
+    case "uz": {
+      return defaultSectionsUzbek;
+    }
+    default: {
+      return defaultSections;
+    }
+  }
 };
 
 export * from "./award";

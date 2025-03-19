@@ -6,7 +6,7 @@ import {
 } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { CreateResumeDto, ImportResumeDto, ResumeDto, UpdateResumeDto } from "@reactive-resume/dto";
-import { defaultResumeData, ResumeData } from "@reactive-resume/schema";
+import { getResumeData, ResumeData } from "@reactive-resume/schema";
 import type { DeepPartial } from "@reactive-resume/utils";
 import { ErrorMessage, generateRandomName } from "@reactive-resume/utils";
 import slugify from "@sindresorhus/slugify";
@@ -26,12 +26,12 @@ export class ResumeService {
   ) {}
 
   async create(userId: string, createResumeDto: CreateResumeDto) {
-    const { name, email, picture } = await this.prisma.user.findUniqueOrThrow({
+    const { name, email, picture, locale } = await this.prisma.user.findUniqueOrThrow({
       where: { id: userId },
-      select: { name: true, email: true, picture: true },
+      select: { name: true, email: true, picture: true, locale: true },
     });
 
-    const data = deepmerge(defaultResumeData, {
+    const data = deepmerge(getResumeData(locale.slice(0, 2) as "en" | "ru" | "uz"), {
       basics: { name, email, picture: { url: picture ?? "" } },
     } satisfies DeepPartial<ResumeData>);
 

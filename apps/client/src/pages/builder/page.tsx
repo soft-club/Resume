@@ -18,11 +18,11 @@ export const BuilderPage = () => {
   const title = useResumeStore((state) => state.resume.title);
 
   const syncResumeToArtboard = useCallback(() => {
-    setImmediate(() => {
+    setTimeout(() => {
       if (!frameRef?.contentWindow) return;
       const message = { type: "SET_RESUME", payload: resume.data };
       frameRef.contentWindow.postMessage(message, "*");
-    });
+    }, 0);
   }, [frameRef?.contentWindow, resume.data]);
 
   // Send resume data to iframe on initial load

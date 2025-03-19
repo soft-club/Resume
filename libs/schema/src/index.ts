@@ -2,7 +2,8 @@ import { z } from "zod";
 
 import { basicsSchema, defaultBasics } from "./basics";
 import { defaultMetadata, metadataSchema } from "./metadata";
-import { defaultSections, sectionsSchema } from "./sections";
+import type { ResumeVariant } from "./sections";
+import { getSectionsByVariant, sectionsSchema } from "./sections";
 
 // Schema
 export const resumeDataSchema = z.object({
@@ -14,12 +15,14 @@ export const resumeDataSchema = z.object({
 // Type
 export type ResumeData = z.infer<typeof resumeDataSchema>;
 
-// Defaults
-export const defaultResumeData: ResumeData = {
+export const getResumeData = (variant: ResumeVariant = "en"): ResumeData => ({
   basics: defaultBasics,
-  sections: defaultSections,
+  sections: getSectionsByVariant(variant),
   metadata: defaultMetadata,
-};
+});
+
+// Default resume data uses the default variant
+export const defaultResumeData = getResumeData("ru");
 
 export * from "./basics";
 export * from "./metadata";
