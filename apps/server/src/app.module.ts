@@ -19,6 +19,7 @@ import { ResumeModule } from "./resume/resume.module";
 import { StorageModule } from "./storage/storage.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
+import { SubscriptionModule } from "./subscription/subscription.module";
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { UserModule } from "./user/user.module";
     TranslationModule,
     ContributorsModule,
     GeminiModule,
+    SubscriptionModule,
 
     // Static Assets
     ServeStaticModule.forRoot({

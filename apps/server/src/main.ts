@@ -7,6 +7,8 @@ import cookieParser from "cookie-parser";
 import session from "express-session";
 import helmet from "helmet";
 import { patchNestJsSwagger } from "nestjs-zod";
+import { PrismaService } from "nestjs-prisma";
+import { SubscriptionPlanService } from "./subscription/subscription-plan.service";
 
 import { AppModule } from "./app.module";
 import type { Config } from "./config/schema";
@@ -62,6 +64,67 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup("docs", app, document);
+
+  // Инициализация тестовых планов подписки, если их нет
+  try {
+    const prismaService = app.get(PrismaService);
+    const subscriptionPlanService = app.get(SubscriptionPlanService);
+
+    // Проверяем, существуют ли уже планы
+    const existingPlans = await prismaService.subscriptionPlan.count();
+
+    if (existingPlans === 0) {
+      // Создаем базовые планы подписки
+      await subscriptionPlanService.create({
+        name: "Basic",
+        description: "Essential features for creating basic resumes",
+        price: 4.99,
+        currency: "USD",
+        duration: 30, // 1 месяц
+        features: {
+          "Unlimited Resumes": true,
+          "Premium Templates": false,
+          "PDF Exports": true,
+          "Remove Watermark": false,
+          "Priority Support": false,
+        },
+      });
+
+      await subscriptionPlanService.create({
+        name: "Professional",
+        description: "Advanced features for job seekers",
+        price: 9.99,
+        currency: "USD",
+        duration: 30, // 1 месяц
+        features: {
+          "Unlimited Resumes": true,
+          "Premium Templates": true,
+          "PDF Exports": true,
+          "Remove Watermark": true,
+          "Priority Support": false,
+        },
+      });
+
+      await subscriptionPlanService.create({
+        name: "Enterprise",
+        description: "Complete package with all premium features",
+        price: 99.99,
+        currency: "USD",
+        duration: 365, // 1 год
+        features: {
+          "Unlimited Resumes": true,
+          "Premium Templates": true,
+          "PDF Exports": true,
+          "Remove Watermark": true,
+          "Priority Support": true,
+        },
+      });
+
+      console.log("Created default subscription plans");
+    }
+  } catch (error) {
+    console.error("Error creating subscription plans:", error);
+  }
 
   // Port
   const port = configService.get<number>("PORT") ?? 3000;

@@ -19,6 +19,13 @@ enum Visibility {
   private
 }
 
+enum SubscriptionStatus {
+  active
+  canceled
+  expired
+  pending
+}
+
 model User {
   id               String   @id @default(cuid())
   name             String
@@ -33,6 +40,8 @@ model User {
   provider         Provider
   secrets          Secrets?
   resumes          Resume[]
+  subscriptions    Subscription[]
+  transactions     Transaction[]
 }
 
 model Secrets {
@@ -78,4 +87,56 @@ model Statistics {
   updatedAt DateTime @updatedAt
 
   @@unique([resumeId, id])
+}
+
+model SubscriptionPlan {
+  id           String         @id @default(cuid())
+  name         String
+  description  String
+  price        Float
+  currency     String         @default("USD")
+  duration     Int            // Duration in days
+  features     Json           @default("{}")
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id              String             @id @default(cuid())
+  startDate       DateTime           @default(now())
+  endDate         DateTime
+  status          SubscriptionStatus @default(pending)
+  userId          String
+  user            User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  planId          String
+  plan            SubscriptionPlan   @relation(fields: [planId], references: [id])
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  
+  @@index(fields: [userId])
+  @@index(fields: [planId])
+}
+
+enum TransactionStatus {
+  pending
+  completed
+  failed
+  refunded
+}
+
+model Transaction {
+  id              String           @id @default(cuid())
+  amount          Float
+  currency        String           @default("USD")
+  description     String
+  status          TransactionStatus @default(pending)
+  paymentMethod   String?
+  paymentId       String?          // ID from payment provider
+  userId          String
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  
+  @@index(fields: [userId])
 }

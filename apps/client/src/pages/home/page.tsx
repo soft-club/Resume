@@ -7,6 +7,7 @@ import { FAQSection } from "./sections/faq";
 import { FeaturesSection } from "./sections/features";
 import { HeroSection } from "./sections/hero";
 import { LogoCloudSection } from "./sections/logo-cloud";
+import { PricingSection } from "./sections/pricing";
 import { StatisticsSection } from "./sections/statistics";
 import { SupportSection } from "./sections/support";
 import { TemplatesSection } from "./sections/templates";
@@ -36,6 +37,7 @@ export const HomePage = () => {
       <FeaturesSection />
       <TemplatesSection />
       <TestimonialsSection />
+      <PricingSection />
       <SupportSection />
       <FAQSection />
       <ContributorsSection />

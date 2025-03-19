@@ -16,6 +16,8 @@ export default defineConfig({
 
   define: {
     appVersion: JSON.stringify(process.env.npm_package_version),
+    'process.env.STRIPE_PUBLIC_KEY': JSON.stringify(process.env.STRIPE_PUBLIC_KEY),
+    'process.env.STRIPE_ENABLED': JSON.stringify(process.env.STRIPE_ENABLED),
   },
 
   server: {

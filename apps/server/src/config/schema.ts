@@ -83,6 +83,12 @@ export const configSchema = z.object({
   OPENID_SCOPE: z.string().optional(),
   OPENID_TOKEN_URL: z.string().url().optional(),
   OPENID_USER_INFO_URL: z.string().url().optional(),
+
+  // Payment Integration
+  STRIPE_ENABLED: z.string(),
+  STRIPE_SECRET_KEY: z.string(),
+  STRIPE_PUBLIC_KEY: z.string(),
+  STRIPE_WEBHOOK_SECRET: z.string(),
 });
 
 export type Config = z.infer<typeof configSchema>;
