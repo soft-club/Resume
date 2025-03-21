@@ -1716,3 +1716,9 @@ msgstr "Zoom In"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Zoom Out"
+
+msgid "Tell your story. Get your dream job."
+msgstr "Tell your story. Get your dream job."
+
+msgid "We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect."
+msgstr "We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect."

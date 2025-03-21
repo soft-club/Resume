@@ -3,9 +3,6 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { Badge, buttonVariants } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-
-import { defaultTiltProps } from "@/client/constants/parallax-tilt";
 
 import { HeroCTA } from "./call-to-action";
 import { Decoration } from "./decoration";
@@ -35,14 +32,13 @@ export const HeroSection = () => (
         </div>
 
         <div className="mt-10 space-y-2">
-          <h6 className="text-base font-bold tracking-wide">{t`Finally,`}</h6>
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`A free and open-source resume builder`}
+            {t`Tell your story. Get your dream job.`}
           </h1>
         </div>
 
         <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
+          {t`We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect.`}
         </p>
 
         <div className="mt-10 flex items-center gap-x-8">
@@ -50,25 +46,20 @@ export const HeroSection = () => (
         </div>
       </motion.div>
 
-      <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-20">
+      <motion.div
+        className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-20"
+        viewport={{ once: true }}
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+      >
         <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-          <motion.div
-            viewport={{ once: true }}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-          >
-            <Tilt {...defaultTiltProps}>
-              <img
-                width={3600}
-                height={2078}
-                src="/screenshots/builder.jpg"
-                alt="Reactive Resume - Screenshot - Builder Screen"
-                className="w-[76rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
-              />
-            </Tilt>
-          </motion.div>
+          <img
+            src="/screenshots/builder.jpg"
+            alt="Builder Screenshot"
+            className="w-[40rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
+          />
         </div>
-      </div>
+      </motion.div>
     </div>
   </section>
 );

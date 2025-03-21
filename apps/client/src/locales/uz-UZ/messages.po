@@ -1711,3 +1711,11 @@ msgstr "Kattalashtirish"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Kichiklashtirish"
+
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:32
+msgid "Tell your story. Get your dream job."
+msgstr "O'z hikoyangizni ayting. Orzu ishingizni oling."
+
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
+msgid "We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect."
+msgstr "Biz odamlarga shunchaki rezyume tuzishga yordam bermaymiz - biz ularga o'z hikoyalarini e'tiborga olinadigan tarzda aytish imkoniyatini beramiz. Chunki buyuk karyera bitta sahifadan boshlanadi va biz uni mukammal qilamiz."

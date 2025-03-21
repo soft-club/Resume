@@ -1716,3 +1716,33 @@ msgstr "Приблизить"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Отдалить"
+
+msgid "Tell your story. Get your dream job."
+msgstr "Расскажи свою историю. Получи работу мечты."
+
+msgid "We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect."
+msgstr "Мы не просто помогаем людям составлять резюме — мы даем им возможность рассказать свою историю так, чтобы их заметили. Потому что великая карьера начинается с одной страницы, и мы сделаем её совершенной."
+
+msgid "Optimize your resume creation with ResumeUp.AI"
+msgstr "Оптимизируйте создание резюме с помощью ResumeUp.AI"
+
+msgid "Avoid mistakes in your resume, get the perfect format and increase your chances for an interview. With ResumeUp.AI platform based on artificial intelligence, creating a professional resume has never been easier."
+msgstr "Избегайте ошибок в резюме, получите идеальный формат и увеличьте свои шансы на собеседование. С платформой ResumeUp.AI на базе искусственного интеллекта создание профессионального резюме никогда не было таким простым."
+
+msgid "Choose a template"
+msgstr "Выберите шаблон"
+
+msgid "Choose from our wide range of free, professionally designed resume templates optimized for ATS systems."
+msgstr "Выбирайте из нашего широкого ассортимента бесплатных, профессионально разработанных шаблонов резюме, оптимизированных для прохождения систем ATS."
+
+msgid "Edit and optimize with AI"
+msgstr "Редактируйте и оптимизируйте с помощью ИИ"
+
+msgid "Our advanced AI resume builder will help you improve and enhance your resume. Get personalized suggestions for quality improvement and error correction in your resume."
+msgstr "Наш передовой ИИ-составитель резюме поможет вам улучшить и улучшить ваше резюме. Получите персонализированные предложения по улучшению качества и исправлению ошибок в резюме."
+
+msgid "Download resume"
+msgstr "Скачать резюме"
+
+msgid "Check your resume score to ensure it is optimized for ATS, and proceed to download in your preferred resume format."
+msgstr "Проверьте оценку вашего резюме, чтобы убедиться, что оно оптимизировано для ATS, и приступайте к загрузке в предпочитаемом вами формате резюме."
