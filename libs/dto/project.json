@@ -26,7 +26,8 @@
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/libs/dto"
+        "reportsDirectory": "../../coverage/libs/dto",
+        "tsConfig": "libs/dto/tsconfig.tests.json"
       }
     }
   },

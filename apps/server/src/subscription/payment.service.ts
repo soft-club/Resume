@@ -75,7 +75,6 @@ export class PaymentService {
         clientSecret: `${paymentIntent.id}_secret_${Math.random().toString(36).slice(2, 10)}`,
       };
     } catch (error) {
-      console.error("Error creating payment intent:", error);
       throw new Error(`Failed to create payment: ${error.message}`);
     }
   }
@@ -116,15 +115,10 @@ export class PaymentService {
           await this.transactionService.updateStatus(transaction.id, TransactionStatus.refunded);
           break;
         }
-
-        default: {
-          console.log(`Unhandled event type: ${event.type}`);
-        }
       }
 
       return { received: true };
     } catch (error) {
-      console.error("Error processing webhook:", error);
       throw new Error(`Failed to process webhook: ${error.message}`);
     }
   }

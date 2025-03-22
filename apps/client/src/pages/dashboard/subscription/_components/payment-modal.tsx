@@ -124,7 +124,7 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
 
   // Форматирование общей стоимости для отображения
   const formattedTotalPrice = new Intl.NumberFormat(undefined, {
-    style: "currency", 
+    style: "currency",
     currency: plan.currency,
   }).format(plan.price);
 
