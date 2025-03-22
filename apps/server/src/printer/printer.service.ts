@@ -1,4 +1,3 @@
-import { HttpService } from "@nestjs/axios";
 import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { ResumeDto } from "@reactive-resume/dto";
@@ -21,7 +20,6 @@ export class PrinterService {
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly storageService: StorageService,
-    private readonly httpService: HttpService,
   ) {
     const chromeUrl = this.configService.getOrThrow<string>("CHROME_URL");
     const chromeToken = this.configService.getOrThrow<string>("CHROME_TOKEN");

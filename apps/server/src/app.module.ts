@@ -17,9 +17,9 @@ import { MailModule } from "./mail/mail.module";
 import { PrinterModule } from "./printer/printer.module";
 import { ResumeModule } from "./resume/resume.module";
 import { StorageModule } from "./storage/storage.module";
+import { SubscriptionModule } from "./subscription/subscription.module";
 import { TranslationModule } from "./translation/translation.module";
 import { UserModule } from "./user/user.module";
-import { SubscriptionModule } from "./subscription/subscription.module";
 
 @Module({
   imports: [

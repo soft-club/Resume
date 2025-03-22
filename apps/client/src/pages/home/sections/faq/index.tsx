@@ -2,9 +2,6 @@
 /* eslint-disable lingui/no-unlocalized-strings */
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
-
-import { useLanguages } from "@/client/services/resume/translation";
 
 // Who are you, and why did you build Reactive Resume?
 const Question1 = () => (
@@ -98,16 +95,6 @@ const Question3 = () => (
     </AccordionTrigger>
     <AccordionContent className="prose max-w-none dark:prose-invert">
       <p>
-        <strong>If you speak a language other than English</strong>, sign up to be a translator on{" "}
-        <a href="https://translate.rxresu.me/" target="_blank" rel="noreferrer">
-          Crowdin
-        </a>
-        , our translation management service. You can help translate the product to your language
-        and share it among your community. Even if the language is already translated, it helps to
-        sign up as you would be notified when there are new phrases to be translated.
-      </p>
-
-      <p>
         <strong>If you work in the media, are an influencer or have lots of friends</strong>, share
         the app with your circles and let them know so it can reach the people who need it the most.
         I'm also <a href="mailto:hello@amruthpillai.com">open to giving tech talks</a>, although
@@ -130,67 +117,6 @@ const Question3 = () => (
     </AccordionContent>
   </AccordionItem>
 );
-
-// What languages are supported on Reactive Resume?
-const Question4 = () => {
-  const { languages } = useLanguages();
-
-  return (
-    <AccordionItem value="4">
-      <AccordionTrigger className="text-left leading-relaxed">
-        What languages are supported on Reactive Resume?
-      </AccordionTrigger>
-      <AccordionContent className="prose max-w-none dark:prose-invert">
-        <p>
-          Here are the languages currently supported by Reactive Resume, along with their respective
-          completion percentages.
-        </p>
-
-        <div className="flex flex-wrap items-start justify-start gap-x-2 gap-y-4">
-          {languages.map((language) => (
-            <a
-              key={language.id}
-              className="no-underline"
-              href={`https://crowdin.com/translate/reactive-resume/all/en-${language.editorCode}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="relative bg-secondary-accent font-medium transition-colors hover:bg-primary hover:text-background">
-                <span className="px-2 py-1">{language.name}</span>
-
-                {language.progress !== undefined && (
-                  <span
-                    className={cn(
-                      "inset-0 bg-warning px-1.5 py-1 text-xs text-white",
-                      language.progress < 40 && "bg-error",
-                      language.progress > 80 && "bg-success",
-                    )}
-                  >
-                    {language.progress}%
-                  </span>
-                )}
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <p>
-          If you'd like to improve the translations for your language, please{" "}
-          <a href="https://crowdin.com/project/reactive-resume" rel="noreferrer" target="_blank">
-            sign up as a translator on Crowdin
-          </a>{" "}
-          and join the project. You can also choose to be notified of any new phrases that get added
-          to the app.
-        </p>
-
-        <p>
-          If a language is missing from this list, please raise an issue on GitHub requesting its
-          inclusion, and I will make sure to add it as soon as possible.
-        </p>
-      </AccordionContent>
-    </AccordionItem>
-  );
-};
 
 // How does the OpenAI Integration work?
 const Question5 = () => (
@@ -245,7 +171,6 @@ export const FAQSection = () => (
           <Question1 />
           <Question2 />
           <Question3 />
-          <Question4 />
           <Question5 />
         </Accordion>
       </div>

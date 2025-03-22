@@ -88,10 +88,6 @@ services:
       STORAGE_USE_SSL: "false"
       STORAGE_SKIP_BUCKET_CHECK: "false"
 
-      # -- Crowdin (Optional) --
-      # CROWDIN_PROJECT_ID:
-      # CROWDIN_PERSONAL_TOKEN:
-
       # -- Email (Optional) --
       # DISABLE_SIGNUPS: "false"
       # DISABLE_EMAIL_AUTH: "false"

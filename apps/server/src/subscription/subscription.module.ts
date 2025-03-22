@@ -1,11 +1,12 @@
 import { Module } from "@nestjs/common";
-import { SubscriptionService } from "./subscription.service";
+
+import { SubscriptionGuard } from "./decorators/has-active-subscription.decorator";
+import { PaymentController } from "./payment.controller";
+import { PaymentService } from "./payment.service";
 import { SubscriptionController } from "./subscription.controller";
+import { SubscriptionService } from "./subscription.service";
 import { SubscriptionPlanService } from "./subscription-plan.service";
 import { TransactionService } from "./transaction.service";
-import { PaymentService } from "./payment.service";
-import { PaymentController } from "./payment.controller";
-import { SubscriptionGuard } from "./decorators/has-active-subscription.decorator";
 
 @Module({
   controllers: [SubscriptionController, PaymentController],
@@ -24,4 +25,4 @@ import { SubscriptionGuard } from "./decorators/has-active-subscription.decorato
     SubscriptionGuard,
   ],
 })
-export class SubscriptionModule {} 
+export class SubscriptionModule {}

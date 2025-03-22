@@ -9,12 +9,6 @@ export const fetchGitHubContributors = async () => {
   return response.data;
 };
 
-export const fetchCrowdinContributors = async () => {
-  const response = await axios.get<ContributorDto[]>(`/contributors/crowdin`);
-
-  return response.data;
-};
-
 export const useContributors = () => {
   const {
     error: githubError,
@@ -25,17 +19,8 @@ export const useContributors = () => {
     queryFn: fetchGitHubContributors,
   });
 
-  const {
-    error: crowdinError,
-    isPending: crowdinLoading,
-    data: crowdin,
-  } = useQuery({
-    queryKey: ["contributors", "crowdin"],
-    queryFn: fetchCrowdinContributors,
-  });
+  const error = githubError;
+  const loading = githubLoading;
 
-  const error = githubError ?? crowdinError;
-  const loading = githubLoading || crowdinLoading;
-
-  return { github, crowdin, loading, error };
+  return { github, loading, error };
 };

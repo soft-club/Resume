@@ -20,7 +20,7 @@ export class GeminiService implements OnModuleInit {
   }
 
   async generateContent(prompt: string) {
-    const url = `${this.baseUrl}/models/gemini-2.0-flash:generateContent?key=${this.apiKey}`;
+    const url = `${this.baseUrl}/models/${this.configService.get<string>("GEMINI_MODEL")}:generateContent?key=${this.apiKey}`;
 
     const response = await fetch(url, {
       method: "POST",

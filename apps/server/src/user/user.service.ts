@@ -27,7 +27,7 @@ export class UserService {
   }
 
   async findOneByIdentifier(identifier: string): Promise<UserWithSecrets | null> {
-    const user = await (async (identifier: string) => {
+    return await (async (identifier: string) => {
       // First, find the user by email
       const user = await this.prisma.user.findUnique({
         where: { email: identifier },
@@ -44,12 +44,10 @@ export class UserService {
         include: { secrets: true },
       });
     })(identifier);
-
-    return user;
   }
 
   async findOneByIdentifierOrThrow(identifier: string): Promise<UserWithSecrets> {
-    const user = await (async (identifier: string) => {
+    return await (async (identifier: string) => {
       // First, find the user by email
       const user = await this.prisma.user.findUnique({
         where: { email: identifier },
@@ -66,8 +64,6 @@ export class UserService {
         include: { secrets: true },
       });
     })(identifier);
-
-    return user;
   }
 
   create(data: Prisma.UserCreateInput): Promise<UserWithSecrets> {

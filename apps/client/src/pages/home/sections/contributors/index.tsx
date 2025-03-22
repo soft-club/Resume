@@ -7,22 +7,15 @@ import { useMemo } from "react";
 import { useContributors } from "@/client/services/resume/contributors";
 
 export const ContributorsSection = () => {
-  const { github, crowdin, loading } = useContributors();
+  const { github, loading } = useContributors();
 
   const contributors = useMemo(() => {
-    if (github && crowdin) return [...github, ...crowdin];
+    if (github) return [...github];
     return [];
-  }, [github, crowdin]);
+  }, [github]);
 
   return (
     <section id="contributors" className="container relative space-y-12 py-24 sm:py-32">
-      <div className="space-y-6 text-center">
-        <h1 className="text-4xl font-bold">{t`By the community, for the community.`}</h1>
-        <p className="mx-auto max-w-3xl leading-loose">
-          {t`Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience.`}
-        </p>
-      </div>
-
       {loading && (
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-3">
           {Array.from({ length: 40 })

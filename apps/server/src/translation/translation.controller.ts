@@ -7,7 +7,7 @@ export class TranslationController {
   constructor(private readonly translationService: TranslationService) {}
 
   @Get("/languages")
-  async languages() {
+  languages() {
     return this.translationService.fetchLanguages();
   }
 }

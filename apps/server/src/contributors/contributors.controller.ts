@@ -10,9 +10,4 @@ export class ContributorsController {
   async githubContributors() {
     return this.contributorsService.fetchGitHubContributors();
   }
-
-  @Get("/crowdin")
-  async crowdinContributors() {
-    return this.contributorsService.fetchCrowdinContributors();
-  }
 }

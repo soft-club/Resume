@@ -49,10 +49,6 @@ export const configSchema = z.object({
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
 
-  // Crowdin (Optional)
-  CROWDIN_PROJECT_ID: z.coerce.number().optional(),
-  CROWDIN_PERSONAL_TOKEN: z.string().optional(),
-
   // Feature Flags (Optional)
   DISABLE_SIGNUPS: z
     .string()

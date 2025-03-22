@@ -1,7 +1,7 @@
-/* eslint-disable simple-import-sort/imports */
 import { Module } from "@nestjs/common";
-import { GeminiService } from "./gemini.service";
+
 import { GeminiController } from "./gemini.controller";
+import { GeminiService } from "./gemini.service";
 
 @Module({
   providers: [GeminiService],

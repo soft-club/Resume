@@ -21,7 +21,7 @@ type WebhookRequestBody = {
 type WebhookRequest = {
   body: WebhookRequestBody;
   rawBody?: Buffer;
-}
+};
 
 @Controller("payment")
 export class PaymentController {
@@ -29,10 +29,7 @@ export class PaymentController {
 
   @UseGuards(AuthGuard("jwt"))
   @Post("create-intent")
-  async createPaymentIntent(
-    @User() user: UserModel,
-    @Body() body: CreatePaymentIntentDto,
-  ) {
+  async createPaymentIntent(@User() user: UserModel, @Body() body: CreatePaymentIntentDto) {
     return this.paymentService.createPaymentIntent(
       body.amount,
       body.currency,

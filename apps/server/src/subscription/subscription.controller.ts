@@ -1,22 +1,16 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  UseGuards,
-} from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from "@nestjs/common";
 import { AuthGuard } from "@nestjs/passport";
 import { User as UserModel } from "@prisma/client";
+import {
+  CreateSubscriptionDto,
+  CreateSubscriptionPlanDto,
+  CreateTransactionDto,
+} from "@reactive-resume/dto";
+
 import { User } from "../user/decorators/user.decorator";
 import { SubscriptionService } from "./subscription.service";
 import { SubscriptionPlanService } from "./subscription-plan.service";
 import { TransactionService } from "./transaction.service";
-import { CreateSubscriptionDto } from "./dto/create-subscription.dto";
-import { CreateSubscriptionPlanDto } from "./dto/create-subscription-plan.dto";
-import { CreateTransactionDto } from "./dto/create-transaction.dto";
 
 @Controller("subscription")
 export class SubscriptionController {
@@ -50,18 +44,18 @@ export class SubscriptionController {
     @Body() createSubscriptionDto: CreateSubscriptionDto,
   ) {
     const plan = await this.subscriptionPlanService.findById(createSubscriptionDto.planId);
-    
+
     if (!plan) {
       throw new Error("Subscription plan not found");
     }
 
     // Вычисляем дату окончания подписки на основе продолжительности плана
-    const startDate = createSubscriptionDto.startDate 
-      ? new Date(createSubscriptionDto.startDate) 
+    const startDate = createSubscriptionDto.startDate
+      ? new Date(createSubscriptionDto.startDate)
       : new Date();
-    
-    const endDate = createSubscriptionDto.endDate 
-      ? new Date(createSubscriptionDto.endDate) 
+
+    const endDate = createSubscriptionDto.endDate
+      ? new Date(createSubscriptionDto.endDate)
       : new Date(startDate.getTime() + plan.duration * 24 * 60 * 60 * 1000);
 
     // Создаем подписку
@@ -76,14 +70,11 @@ export class SubscriptionController {
 
   @UseGuards(AuthGuard("jwt"))
   @Patch(":id/cancel")
-  async cancelSubscription(
-    @User() user: UserModel,
-    @Param("id") id: string,
-  ) {
+  async cancelSubscription(@User() user: UserModel, @Param("id") id: string) {
     // Проверяем, принадлежит ли подписка текущему пользователю
     const subscription = await this.subscriptionService.findAllByUserId(user.id);
     const userSubscriptionIds = subscription.map((sub) => sub.id);
-    
+
     if (!userSubscriptionIds.includes(id)) {
       throw new Error("Subscription not found");
     }
@@ -114,7 +105,16 @@ export class SubscriptionController {
   @UseGuards(AuthGuard("jwt"))
   @Post("plans")
   async createPlan(@Body() createPlanDto: CreateSubscriptionPlanDto) {
-    return this.subscriptionPlanService.create(createPlanDto);
+    // Преобразуем Record<string, unknown> в формат, ожидаемый Prisma
+    const planInput = {
+      ...createPlanDto,
+      // Преобразование в JSON если features существует
+      features: createPlanDto.features
+        ? JSON.parse(JSON.stringify(createPlanDto.features))
+        : undefined,
+    };
+
+    return this.subscriptionPlanService.create(planInput);
   }
 
   @UseGuards(AuthGuard("jwt"))
@@ -122,4 +122,4 @@ export class SubscriptionController {
   async deletePlan(@Param("id") id: string) {
     return this.subscriptionPlanService.delete(id);
   }
-} 
+}
