@@ -1,62 +1,47 @@
 import { t } from "@lingui/macro";
-import { ArrowRight } from "@phosphor-icons/react";
-import { Badge, buttonVariants } from "@reactive-resume/ui";
-import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
 
 import { HeroCTA } from "./call-to-action";
 import { Decoration } from "./decoration";
 
 export const HeroSection = () => (
-  <section id="hero" className="relative">
+  <section id="hero" className="relative pt-32">
     <Decoration.Grid />
     <Decoration.Gradient />
 
-    <div className="mx-auto max-w-7xl px-6 lg:flex lg:h-screen lg:items-center lg:px-12">
+    <div className="mx-auto max-w-7xl px-6 lg:flex lg:items-center lg:px-12">
       <motion.div
-        className="mx-auto mt-32 max-w-3xl shrink-0 lg:mx-0 lg:mt-0 lg:max-w-xl lg:pt-8"
+        className="mx-auto mt-16 max-w-3xl shrink-0 lg:mx-0 lg:mt-12 lg:max-w-xl"
         viewport={{ once: true }}
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
-        <div className="hidden items-center gap-x-4 sm:flex">
-          <Badge>{t`Version 4`}</Badge>
-
-          <a
-            href="https://docs.rxresu.me/overview/features"
-            className={cn(buttonVariants({ variant: "link" }), "space-x-2 text-left")}
-          >
-            <p>{t`What's new in the latest version`}</p>
-            <ArrowRight />
-          </a>
-        </div>
-
-        <div className="mt-10 space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            {t`Tell your story. Get your dream job.`}
+        <div className="space-y-1">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
+            {t`Create the Perfect Resume in 5 Minutes with AI`}
           </h1>
         </div>
 
-        <p className="prose prose-base prose-zinc mt-6 text-lg leading-8 dark:prose-invert">
-          {t`We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect.`}
-        </p>
+        <div className="prose prose-sm prose-zinc mt-4 space-y-2 text-base leading-6 dark:prose-invert">
+          <p>{t`Get 3x more job offers with our smart resume editor. AI-powered analysis, professional templates, and instant export make it easy to create a standout resume in just a few clicks. Your dream job starts with a great resume—let's make it perfect!`}</p>
+        </div>
 
-        <div className="mt-10 flex items-center gap-x-8">
+        <div className="mt-6 flex items-center">
           <HeroCTA />
         </div>
       </motion.div>
 
       <motion.div
-        className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-20"
+        className="mx-auto mt-6 flex max-w-xl sm:mt-8 lg:ml-8 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-16"
         viewport={{ once: true }}
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
       >
-        <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+        <div className="max-w-2xl flex-none sm:max-w-3xl lg:max-w-none">
           <img
             src="/screenshots/builder.jpg"
             alt="Builder Screenshot"
-            className="w-[40rem] rounded-lg bg-background/5 shadow-2xl ring-1 ring-foreground/10"
+            className="w-[32rem] rounded-lg bg-background/5 shadow-xl ring-1 ring-foreground/10"
           />
         </div>
       </motion.div>

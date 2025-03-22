@@ -1719,3 +1719,27 @@ msgstr "O'z hikoyangizni ayting. Orzu ishingizni oling."
 #: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
 msgid "We don't just help people create resumes - we give them the opportunity to tell their story in a way that gets them noticed. Because a great career starts with one page, and we'll make it perfect."
 msgstr "Biz odamlarga shunchaki rezyume tuzishga yordam bermaymiz - biz ularga o'z hikoyalarini e'tiborga olinadigan tarzda aytish imkoniyatini beramiz. Chunki buyuk karyera bitta sahifadan boshlanadi va biz uni mukammal qilamiz."
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:5
+msgid "Edit & Enhance with AI"
+msgstr "Sun'iy intellekt bilan tahrirlash va yaxshilash"
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:6
+msgid "Our smart editor analyzes your resume, suggests improvements, and helps you make it stronger to grab employers' attention."
+msgstr "Bizning aqlli tahrirlovchimiz rezyumengizni tahlil qiladi, yaxshilash bo'yicha tavsiyalar beradi va ish beruvchilarning e'tiborini tortish uchun uni kuchliroq qilishga yordam beradi."
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:11
+msgid "Choose a Template"
+msgstr "Shablonni tanlang"
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:12
+msgid "Select from our collection of professionally designed and stylish templates that make you stand out."
+msgstr "Sizni ajratib turadigan professional ishlab chiqilgan va zamonaviy shablonlar to'plamimizdan tanlang."
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:17
+msgid "Download & Use"
+msgstr "Yuklab oling va foydalaning"
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:18
+msgid "Review the final result, ensure your resume is fully polished, and download it as a PDF or share it via an online link."
+msgstr "Yakuniy natijani ko'rib chiqing, rezyumengiz to'liq sayqallangan ekanligiga ishonch hosil qiling va uni PDF sifatida yuklab oling yoki onlayn havola orqali ulashing."

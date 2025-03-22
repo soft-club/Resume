@@ -1,6 +1,5 @@
 import { t } from "@lingui/macro";
 import { Button, Card, CardContent, CardHeader, CardTitle } from "@reactive-resume/ui";
-import { useState } from "react";
 
 type SubscriptionPlan = {
   id: string;
@@ -12,18 +11,11 @@ type SubscriptionPlan = {
   features: Record<string, boolean>;
 };
 
-type PeriodOption = {
-  months: number;
-  pricePerMonth: number;
-  discountPercentage?: number;
-};
-
 type PlanCardProps = {
   plan: SubscriptionPlan;
   isActive: boolean;
   showSubscribeButton?: boolean;
-  onSubscribe?: (plan: SubscriptionPlan, duration: number) => void;
-  periodOptions?: PeriodOption[];
+  onSubscribe?: (plan: SubscriptionPlan) => void;
 };
 
 export const PlanCard = ({
@@ -31,23 +23,11 @@ export const PlanCard = ({
   isActive,
   showSubscribeButton = true,
   onSubscribe,
-  periodOptions = [
-    { months: 1, pricePerMonth: plan.price, discountPercentage: 0 },
-    { months: 3, pricePerMonth: plan.price * 0.9, discountPercentage: 10 },
-    { months: 12, pricePerMonth: plan.price * 0.75, discountPercentage: 25 },
-  ],
 }: PlanCardProps) => {
-  const [selectedPeriod, setSelectedPeriod] = useState<PeriodOption>(periodOptions[0]);
-  const isFree = plan.price === 0;
-
   const handleSubscribe = () => {
     if (onSubscribe && !isActive) {
-      onSubscribe(plan, selectedPeriod.months);
+      onSubscribe(plan);
     }
-  };
-
-  const formatCurrency = (value: number): string => {
-    return `${value} ${plan.currency}`;
   };
 
   return (
@@ -58,42 +38,11 @@ export const PlanCard = ({
       <CardContent>
         <div className="flex items-baseline gap-x-2">
           <span className="text-5xl font-bold tracking-tight">
-            {isFree ? t`Free` : formatCurrency(selectedPeriod.pricePerMonth)}
+            {plan.price} {plan.currency}
           </span>
-          {!isFree && <span className="text-base text-gray-500">/{t`month`}</span>}
+          <span className="text-base text-gray-500">/{t`month`}</span>
         </div>
         <p className="mt-6 text-base leading-7 text-gray-500">{plan.description}</p>
-
-        {/* Опции периода для платных планов */}
-        {!isFree && showSubscribeButton && (
-          <div className="mt-6 flex flex-wrap gap-2">
-            {periodOptions.map((period) => (
-              <Button
-                key={period.months}
-                className="flex-1"
-                variant={selectedPeriod.months === period.months ? "default" : "outline"}
-                onClick={() => setSelectedPeriod(period)}
-              >
-                {period.months === 1
-                  ? t`Monthly`
-                  : period.months === 12
-                  ? t`Yearly`
-                  : t`${period.months} months`}
-                {period.discountPercentage && period.discountPercentage > 0 ? (
-                  <span className="ml-1 text-xs">(-{period.discountPercentage}%)</span>
-                ) : null}
-              </Button>
-            ))}
-          </div>
-        )}
-
-        {/* Полная цена для платных планов */}
-        {!isFree && selectedPeriod.months > 1 && (
-          <div className="mt-4 text-center text-sm text-gray-500">
-            {t`Total: ${formatCurrency(selectedPeriod.pricePerMonth * selectedPeriod.months)}`}
-          </div>
-        )}
-
         <ul className="mt-10 space-y-4 text-sm leading-6">
           {Object.entries(plan.features).map(([feature, included]) => (
             <li key={feature} className="flex gap-x-3">
@@ -128,7 +77,7 @@ export const PlanCard = ({
               variant={isActive ? "outline" : "primary"}
               onClick={handleSubscribe}
             >
-              {isActive ? t`Current Plan` : isFree ? t`Get Started` : t`Subscribe`}
+              {isActive ? t`Current Plan` : t`Subscribe`}
             </Button>
           </div>
         )}

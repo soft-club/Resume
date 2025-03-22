@@ -81,11 +81,12 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
       // Сначала создаем подписку
       const subscriptionResponse = await axios.post("/api/subscription", {
         planId: plan.id,
+        duration: plan.duration // передаем длительность
       });
 
       // Затем создаем платеж
       const paymentResponse = await axios.post("/api/payment/create-intent", {
-        amount: plan.price,
+        amount: plan.price, // общая стоимость с учетом длительности
         currency: plan.currency,
         description: `Subscription: ${subscriptionResponse.data.id}`,
         subscriptionId: subscriptionResponse.data.id,
@@ -121,18 +122,42 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
     createSubscription.mutate();
   };
 
-  // Форматирование цены для отображения
-  const formattedPrice = new Intl.NumberFormat(undefined, {
-    style: "currency",
+  // Форматирование общей стоимости для отображения
+  const formattedTotalPrice = new Intl.NumberFormat(undefined, {
+    style: "currency", 
     currency: plan.currency,
   }).format(plan.price);
+
+  // Если это подписка на несколько месяцев, вычисляем и отображаем цену за месяц
+  const monthlyPrice = plan.duration > 1 ? plan.price / plan.duration : plan.price;
+  const formattedMonthlyPrice = new Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: plan.currency,
+  }).format(monthlyPrice);
+
+  // Период подписки для отображения
+  const getPeriodText = () => {
+    if (plan.duration === 1) return t`месяц`;
+    if (plan.duration === 3) return t`квартал`;
+    if (plan.duration === 12) return t`год`;
+    return t`${plan.duration} месяцев`;
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>{t`Subscribe to ${plan.name}`}</DialogTitle>
-          <DialogDescription>{t`Total: ${formattedPrice}`}</DialogDescription>
+          <DialogTitle>{t`Подписка на ${plan.name}`}</DialogTitle>
+          <DialogDescription>
+            {plan.duration > 1 ? (
+              <>
+                <div>{t`Ежемесячно: ${formattedMonthlyPrice}`}</div>
+                <div className="mt-1 font-semibold">{t`Всего за ${getPeriodText()}: ${formattedTotalPrice}`}</div>
+              </>
+            ) : (
+              <>{t`Стоимость: ${formattedTotalPrice} в месяц`}</>
+            )}
+          </DialogDescription>
         </DialogHeader>
 
         {isSuccess ? (
@@ -153,8 +178,8 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <p className="text-center text-xl font-semibold">{t`Payment Successful!`}</p>
-            <p className="text-muted-foreground text-center text-sm">{t`Your subscription has been activated.`}</p>
+            <p className="text-center text-xl font-semibold">{t`Оплата успешна!`}</p>
+            <p className="text-muted-foreground text-center text-sm">{t`Ваша подписка активирована.`}</p>
           </div>
         ) : (
           <Form {...form}>
@@ -164,7 +189,7 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                 name="cardNumber"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t`Card Number`}</FormLabel>
+                    <FormLabel>{t`Номер карты`}</FormLabel>
                     <FormControl>
                       <Input placeholder="1234 5678 9012 3456" disabled={isProcessing} {...field} />
                     </FormControl>
@@ -178,9 +203,9 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                 name="cardholderName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t`Cardholder Name`}</FormLabel>
+                    <FormLabel>{t`Имя держателя карты`}</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" disabled={isProcessing} {...field} />
+                      <Input placeholder="Иванов Иван" disabled={isProcessing} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -193,7 +218,7 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                   name="expiryMonth"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>{t`Month`}</FormLabel>
+                      <FormLabel>{t`Месяц`}</FormLabel>
                       <Select
                         defaultValue={field.value}
                         disabled={isProcessing}
@@ -201,7 +226,7 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder={t`Month`} />
+                            <SelectValue placeholder={t`Месяц`} />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -225,7 +250,7 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                   name="expiryYear"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>{t`Year`}</FormLabel>
+                      <FormLabel>{t`Год`}</FormLabel>
                       <Select
                         defaultValue={field.value}
                         disabled={isProcessing}
@@ -233,7 +258,7 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder={t`Year`} />
+                            <SelectValue placeholder={t`Год`} />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
@@ -269,10 +294,10 @@ export const PaymentModal = ({ isOpen, onClose, plan }: PaymentModalProps) => {
 
               <DialogFooter>
                 <Button type="button" variant="outline" disabled={isProcessing} onClick={onClose}>
-                  {t`Cancel`}
+                  {t`Отмена`}
                 </Button>
                 <Button type="submit" disabled={isProcessing}>
-                  {isProcessing ? t`Processing...` : t`Pay Now`}
+                  {isProcessing ? t`Обработка...` : t`Оплатить`}
                 </Button>
               </DialogFooter>
             </form>

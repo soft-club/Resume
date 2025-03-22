@@ -4,16 +4,25 @@ import { motion } from "framer-motion";
 
 export const TemplatesSection = () => (
   <section id="sample-resumes" className="relative py-24 sm:py-32">
-    <div className="container flex flex-col gap-12 lg:min-h-[600px] lg:flex-row lg:items-start">
-      <div className="space-y-4 lg:mt-16 lg:basis-96">
-        <h2 className="text-4xl font-bold">{t`Templates`}</h2>
-
-        <p className="leading-relaxed">
-          {t`Explore the templates available in Reactive Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume.`}
+    <div className="mx-auto max-w-7xl px-6 lg:px-12">
+      <motion.div
+        className="text-center"
+        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t`Resume Templates`}</h2>
+        <p className="mx-auto mt-6 max-w-3xl text-lg leading-8">
+          {t`Explore the templates available in our editor and browse through example resumes created with them. They can inspire you and guide you in crafting your perfect resume.`}
         </p>
-      </div>
+      </motion.div>
 
-      <div className="w-full overflow-hidden lg:absolute lg:right-0 lg:max-w-[55%]">
+      <motion.div
+        className="mx-auto mt-16 w-full overflow-hidden"
+        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+      >
         <motion.div
           animate={{
             x: [0, templatesList.length * 200 * -1],
@@ -42,14 +51,12 @@ export const TemplatesSection = () => (
                 alt={template}
                 loading="lazy"
                 src={`/templates/jpg/${template}.jpg`}
-                className="aspect-[1/1.4142] h-[400px] rounded object-cover lg:h-[600px]"
+                className="aspect-[1/1.4142] h-[280px] rounded object-cover lg:h-[420px]"
               />
             </motion.a>
           ))}
         </motion.div>
-
-        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/2 bg-gradient-to-r from-background to-transparent lg:block" />
-      </div>
+      </motion.div>
     </div>
   </section>
 );

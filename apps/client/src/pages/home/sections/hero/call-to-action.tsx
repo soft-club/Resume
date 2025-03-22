@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { Book, SignOut } from "@phosphor-icons/react";
+import { SignOut } from "@phosphor-icons/react";
 import { Button } from "@reactive-resume/ui";
 import { Link } from "react-router";
 
@@ -28,16 +28,16 @@ export const HeroCTA = () => {
 
   return (
     <>
-      <Button asChild size="lg">
-        <Link to="/auth/login">{t`Get Started`}</Link>
+      <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+        <Link to="/auth/login">{t`Create Resume for Free`}</Link>
       </Button>
 
-      <Button asChild size="lg" variant="link">
+      {/* <Button asChild size="lg" variant="link">
         <a href="https://docs.rxresu.me" target="_blank" rel="noopener noreferrer nofollow">
           <Book className="mr-3" />
           {t`Learn more`}
         </a>
-      </Button>
+      </Button> */}
     </>
   );
 };

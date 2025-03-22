@@ -655,7 +655,7 @@ msgstr "На главную"
 msgid "Go to home"
 msgstr "На главную"
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:31
+#: apps/client/src/_components/social-auth.tsx:31
 msgid "Google"
 msgstr "Google"
 
@@ -1746,3 +1746,27 @@ msgstr "Скачать резюме"
 
 msgid "Check your resume score to ensure it is optimized for ATS, and proceed to download in your preferred resume format."
 msgstr "Проверьте оценку вашего резюме, чтобы убедиться, что оно оптимизировано для ATS, и приступайте к загрузке в предпочитаемом вами формате резюме."
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:5
+msgid "Edit & Enhance with AI"
+msgstr "Редактируйте и улучшайте с ИИ"
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:6
+msgid "Our smart editor analyzes your resume, suggests improvements, and helps you make it stronger to grab employers' attention."
+msgstr "Наш умный редактор анализирует ваше резюме, предлагает улучшения и помогает сделать его более сильным, чтобы привлечь внимание работодателей."
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:11
+msgid "Choose a Template"
+msgstr "Выберите шаблон"
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:12
+msgid "Select from our collection of professionally designed and stylish templates that make you stand out."
+msgstr "Выберите из нашей коллекции профессионально разработанных и стильных шаблонов, которые помогут вам выделиться."
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:17
+msgid "Download & Use"
+msgstr "Скачайте и используйте"
+
+#: apps/client/src/pages/home/sections/features/features-data.tsx:18
+msgid "Review the final result, ensure your resume is fully polished, and download it as a PDF or share it via an online link."
+msgstr "Просмотрите итоговый результат, убедитесь, что ваше резюме полностью отшлифовано, и скачайте его в формате PDF или поделитесь через онлайн-ссылку."
