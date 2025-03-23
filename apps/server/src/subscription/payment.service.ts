@@ -3,6 +3,7 @@ import { ConfigService } from "@nestjs/config";
 import { TransactionStatus } from "@prisma/client";
 
 import { Config } from "../config/schema";
+import { PaymeService } from "./payme/payme.service";
 import { SubscriptionService } from "./subscription.service";
 import { TransactionService } from "./transaction.service";
 
@@ -18,14 +19,17 @@ type StripePayment = {
 export class PaymentService {
   private readonly stripeEnabled: boolean;
   private readonly stripeSecretKey: string | undefined;
+  private readonly paymeEnabled: boolean;
 
   constructor(
     private readonly configService: ConfigService<Config>,
     private readonly transactionService: TransactionService,
     private readonly subscriptionService: SubscriptionService,
+    private readonly paymeService?: PaymeService,
   ) {
     this.stripeEnabled = configService.get("STRIPE_ENABLED", { infer: true }) === "true";
     this.stripeSecretKey = configService.get("STRIPE_SECRET_KEY", { infer: true });
+    this.paymeEnabled = configService.get("PAYME_ENABLED", { infer: true }) === "true";
   }
 
   async createPaymentIntent(
@@ -34,13 +38,23 @@ export class PaymentService {
     description: string,
     userId: string,
     subscriptionId?: string,
+    paymentMethod = "stripe",
   ) {
     // Проверка, включена ли интеграция с платежной системой
-    if (!this.stripeEnabled) {
-      throw new Error("Payment integration is not enabled");
+    if (paymentMethod === "stripe" && !this.stripeEnabled) {
+      throw new Error("Stripe payment integration is not enabled");
+    }
+
+    if (paymentMethod === "payme" && !this.paymeEnabled) {
+      throw new Error("Payme payment integration is not enabled");
     }
 
     try {
+      if (paymentMethod === "payme") {
+        return this.createPaymePayment(amount, currency, description, userId, subscriptionId);
+      }
+
+      // Для Stripe (по умолчанию)
       // В реальном проекте здесь должен быть код для создания платежа в Stripe
       // const stripe = new Stripe(this.stripeSecretKey);
       // const paymentIntent = await stripe.paymentIntents.create({
@@ -77,6 +91,43 @@ export class PaymentService {
     } catch (error) {
       throw new Error(`Failed to create payment: ${error.message}`);
     }
+  }
+
+  private async createPaymePayment(
+    amount: number,
+    currency: string,
+    description: string,
+    userId: string,
+    subscriptionId?: string,
+  ) {
+    if (!this.paymeService) {
+      throw new Error("Payme service is not available");
+    }
+
+    if (currency !== "UZS") {
+      throw new Error("Payme only supports UZS currency");
+    }
+
+    // Создаем URL для оплаты через Payme
+    const paymentUrl = this.paymeService.createPaymentUrl(amount, userId);
+
+    // В случае с Payme, запись о транзакции создается в момент подтверждения платежа
+    // через webhook, но мы можем создать предварительную запись здесь
+    const transaction = await this.transactionService.create({
+      amount,
+      currency,
+      description,
+      paymentId: `pending_payme_${Math.random().toString(36).slice(2, 15)}`,
+      paymentMethod: "payme",
+      status: "pending",
+      user: { connect: { id: userId } },
+    });
+
+    return {
+      transactionId: transaction.id,
+      paymentUrl,
+      provider: "payme",
+    };
   }
 
   async handleWebhook(event: any) {

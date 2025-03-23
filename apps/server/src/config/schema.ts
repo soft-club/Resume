@@ -85,6 +85,21 @@ export const configSchema = z.object({
   STRIPE_SECRET_KEY: z.string(),
   STRIPE_PUBLIC_KEY: z.string(),
   STRIPE_WEBHOOK_SECRET: z.string(),
+
+  // Payme Integration
+  PAYME_ENABLED: z.enum(["true", "false"]).default("false"),
+  PAYME_MERCHANT_ID: z.string().optional(),
+  PAYME_MERCHANT_KEY: z.string().optional(),
+  PAYME_CHECKOUT_URL: z.string().default("https://checkout.paycom.uz"),
+  PAYME_API_URL: z.string().default("https://checkout.paycom.uz/api"),
+
+  EMAIL_VERIFICATION_TOKEN_SECRET: z.string().default("email-verification-token-secret"),
+
+  CLICK_ENABLED: z.enum(["true", "false"]).default("false"),
+  CLICK_MERCHANT_ID: z.string().optional(),
+  CLICK_SERVICE_ID: z.string().optional(),
+  CLICK_SECRET_KEY: z.string().optional(),
+  CLICK_API_URL: z.string().default("https://api.click.uz/v2/merchant"),
 });
 
 export type Config = z.infer<typeof configSchema>;

@@ -224,6 +224,9 @@ importers:
       deepmerge:
         specifier: ^4.3.1
         version: 4.3.1
+      express:
+        specifier: ^4.21.2
+        version: 4.21.2
       express-session:
         specifier: ^1.18.1
         version: 1.18.1
@@ -393,21 +396,9 @@ importers:
       '@babel/core':
         specifier: ^7.26.7
         version: 7.26.7
-      '@babel/plugin-proposal-class-properties':
-        specifier: ^7.18.6
-        version: 7.18.6(@babel/core@7.26.7)
-      '@babel/plugin-proposal-decorators':
-        specifier: ^7.25.9
-        version: 7.25.9(@babel/core@7.26.7)
-      '@babel/preset-env':
-        specifier: ^7.26.9
-        version: 7.26.9(@babel/core@7.26.7)
       '@babel/preset-react':
         specifier: ^7.26.3
         version: 7.26.3(@babel/core@7.26.7)
-      '@babel/preset-typescript':
-        specifier: ^7.26.0
-        version: 7.26.0(@babel/core@7.26.7)
       '@lingui/cli':
         specifier: ^4.14.1
         version: 4.14.1(typescript@5.7.3)
@@ -459,9 +450,6 @@ importers:
       '@nx/workspace':
         specifier: ^19.8.14
         version: 19.8.14(@swc-node/register@1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.12(@swc/helpers@0.5.15))
-      '@rollup/plugin-babel':
-        specifier: ^6.0.4
-        version: 6.0.4(@babel/core@7.26.7)(@types/babel__core@7.20.5)(rollup@4.32.1)
       '@swc-node/register':
         specifier: ^1.10.9
         version: 1.10.9(@swc/core@1.10.12(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3)
@@ -471,9 +459,6 @@ importers:
       '@swc/core':
         specifier: ^1.10.12
         version: 1.10.12(@swc/helpers@0.5.15)
-      '@swc/plugin-transform-imports':
-        specifier: ^7.0.0
-        version: 7.0.0
       '@tailwindcss/container-queries':
         specifier: ^0.1.1
         version: 0.1.1(tailwindcss@3.4.17(ts-node@10.9.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(@types/node@22.13.0)(typescript@5.7.3)))
@@ -594,9 +579,6 @@ importers:
       babel-plugin-macros:
         specifier: ^3.1.0
         version: 3.1.0
-      core-js:
-        specifier: ^3.41.0
-        version: 3.41.0
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -678,15 +660,9 @@ importers:
       vite:
         specifier: ^5.4.14
         version: 5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)
-      vite-plugin-babel:
-        specifier: ^1.3.0
-        version: 1.3.0(@babel/core@7.26.7)(vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0))
       vite-plugin-dts:
         specifier: ^4.5.0
         version: 4.5.0(@types/node@22.13.0)(rollup@4.32.1)(typescript@5.7.3)(vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0))
-      vite-plugin-swc:
-        specifier: ^0.0.2
-        version: 0.0.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0))
       vitest:
         specifier: ^2.1.9
         version: 2.1.9(@types/node@22.13.0)(@vitest/ui@2.1.9)(jsdom@25.0.1)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)
@@ -892,13 +868,6 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
-
-  '@babel/plugin-proposal-class-properties@7.18.6':
-    resolution: {integrity: sha512-cumfXOF0+nzZrrN8Rf0t7M+tF6sZc7vhQwYQck9q1/5w2OExlD+b4v4RpMJFaV1Z7WcDRgO6FqvxqxGlwo+RHQ==}
-    engines: {node: '>=6.9.0'}
-    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-decorators@7.25.9':
     resolution: {integrity: sha512-smkNLL/O1ezy9Nhy4CNosc4Va+1wo5w4gzSZeLe6y6dM4mmHfYOCPolXQPHQxonZCF+ZyebxN9vqOolkYrSn5g==}
@@ -3774,19 +3743,6 @@ packages:
   '@remirror/core-constants@3.0.0':
     resolution: {integrity: sha512-42aWfPrimMfDKDi4YegyS7x+/0tlzaqwPQCULLanv3DMIlu96KTJR0fM5isWX2UViOqlGnX6YFgqWepcX+XMNg==}
 
-  '@rollup/plugin-babel@6.0.4':
-    resolution: {integrity: sha512-YF7Y52kFdFT/xVSuVdjkV5ZdX/3YtmX0QulG+x0taQOtJdHYzVU61aSSkAgVJ7NOv6qPkIYiJSgSWWN/DM5sGw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/babel__core': ^7.1.9
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      '@types/babel__core':
-        optional: true
-      rollup:
-        optional: true
-
   '@rollup/pluginutils@5.1.4':
     resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
     engines: {node: '>=14.0.0'}
@@ -4149,9 +4105,6 @@ packages:
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
-
-  '@swc/plugin-transform-imports@7.0.0':
-    resolution: {integrity: sha512-EeZL5X/NnY3R2NqfucWyX3qi6RcTaB1rTR2lFBtzbi7e2emb0XA3FOkLwgiAKH6DB7rqQpTAHN2a1pYwA7L/2A==}
 
   '@swc/types@0.1.17':
     resolution: {integrity: sha512-V5gRru+aD8YVyCOMAjMpWR1Ui577DD5KSJsHP8RAxopAH22jFz6GZd/qxqjO6MJHQhcsjvjOFXyDhyLQUnMveQ==}
@@ -5821,9 +5774,6 @@ packages:
 
   core-js-compat@3.40.0:
     resolution: {integrity: sha512-0XEDpr5y5mijvw8Lbc6E5AkjrHfp7eEoPlu36SWeAbcL8fn1G1ANe8DBlo2XoNN89oVpxWwOjYIPVzR4ZvsKCQ==}
-
-  core-js@3.41.0:
-    resolution: {integrity: sha512-SJ4/EHwS36QMJd6h/Rg+GyR4A5xE0FSI3eZ+iBVpfqf1x0eTSg1smWLHrA+2jQThZSh97fmSgFSU8B61nxosxA==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -11014,12 +10964,6 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-babel@1.3.0:
-    resolution: {integrity: sha512-C5WKX0UwvQKH8WD2GiyWUjI62UBfLbfUhiLexnIm4asLdENX5ymrRipFlBnGeVxoOaYgTL5dh5KW6YDGpWsR8A==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      vite: ^2.7.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
-
   vite-plugin-dts@4.5.0:
     resolution: {integrity: sha512-M1lrPTdi7gilLYRZoLmGYnl4fbPryVYsehPN9JgaxjJKTs8/f7tuAlvCCvOLB5gRDQTTKnptBcB0ACsaw2wNLw==}
     peerDependencies:
@@ -11028,12 +10972,6 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
-
-  vite-plugin-swc@0.0.2:
-    resolution: {integrity: sha512-8u11xSNvu9IYlLtdCPmAVtbw2caEwPgz+aFiSod6Q4bK4LAHAY4qhiQYPeLq2iGRBRloxDnVOsSQhn9nlwA6YA==}
-    peerDependencies:
-      '@swc/core': ^1.2.98
-      vite: ^2.6.7
 
   vite@5.4.14:
     resolution: {integrity: sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==}
@@ -11704,14 +11642,6 @@ snapshots:
       '@babel/core': 7.26.7
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/traverse': 7.26.7
-    transitivePeerDependencies:
-      - supports-color
-
-  '@babel/plugin-proposal-class-properties@7.18.6(@babel/core@7.26.7)':
-    dependencies:
-      '@babel/core': 7.26.7
-      '@babel/helper-create-class-features-plugin': 7.25.9(@babel/core@7.26.7)
-      '@babel/helper-plugin-utils': 7.26.5
     transitivePeerDependencies:
       - supports-color
 
@@ -15297,17 +15227,6 @@ snapshots:
 
   '@remirror/core-constants@3.0.0': {}
 
-  '@rollup/plugin-babel@6.0.4(@babel/core@7.26.7)(@types/babel__core@7.20.5)(rollup@4.32.1)':
-    dependencies:
-      '@babel/core': 7.26.7
-      '@babel/helper-module-imports': 7.25.9
-      '@rollup/pluginutils': 5.1.4(rollup@4.32.1)
-    optionalDependencies:
-      '@types/babel__core': 7.20.5
-      rollup: 4.32.1
-    transitivePeerDependencies:
-      - supports-color
-
   '@rollup/pluginutils@5.1.4(rollup@4.32.1)':
     dependencies:
       '@types/estree': 1.0.6
@@ -15684,10 +15603,6 @@ snapshots:
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
-
-  '@swc/plugin-transform-imports@7.0.0':
-    dependencies:
-      '@swc/counter': 0.1.3
 
   '@swc/types@0.1.17':
     dependencies:
@@ -17693,8 +17608,6 @@ snapshots:
   core-js-compat@3.40.0:
     dependencies:
       browserslist: 4.24.4
-
-  core-js@3.41.0: {}
 
   core-util-is@1.0.3: {}
 
@@ -23942,11 +23855,6 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-babel@1.3.0(@babel/core@7.26.7)(vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)):
-    dependencies:
-      '@babel/core': 7.26.7
-      vite: 5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)
-
   vite-plugin-dts@4.5.0(@types/node@22.13.0)(rollup@4.32.1)(typescript@5.7.3)(vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)):
     dependencies:
       '@microsoft/api-extractor': 7.49.2(@types/node@22.13.0)
@@ -23965,12 +23873,6 @@ snapshots:
       - '@types/node'
       - rollup
       - supports-color
-
-  vite-plugin-swc@0.0.2(@swc/core@1.10.12(@swc/helpers@0.5.15))(vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)):
-    dependencies:
-      '@swc/core': 1.10.12(@swc/helpers@0.5.15)
-      lodash.merge: 4.6.2
-      vite: 5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0)
 
   vite@5.4.14(@types/node@22.13.0)(less@4.1.3)(sass@1.83.4)(stylus@0.64.0)(terser@5.37.0):
     dependencies:

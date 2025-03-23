@@ -1,7 +1,7 @@
 import { t } from "@lingui/macro";
 import { CurrencyDollar, Medal, Star } from "@phosphor-icons/react";
 import { Button, Card, CardContent, CardHeader, CardTitle } from "@reactive-resume/ui";
-import { Link } from "react-router";
+import { useState } from "react";
 
 type ProfessionalPlan = {
   id: string;
@@ -15,6 +15,54 @@ type ProfessionalPlan = {
 };
 
 export const PricingSection = () => {
+  const [isPaymentLoading] = useState<Record<string, boolean>>({});
+
+  // Функция для создания прямой ссылки на PayMe
+  const handlePaymePayment = (plan: ProfessionalPlan) => {
+    // Используем демонстрационный ID мерчанта PayMe (для тестирования)
+    const merchantId = "6423b91fd7576108eda85482";
+
+    // Рассчитываем сумму в тийинах (1/100 сума)
+    const amount = Math.round(plan.basePrice * (1 - plan.discount)) * 100;
+
+    // Создаем объект данных для оплаты
+    const orderData = {
+      merchant: merchantId,
+      amount,
+      account: { id: plan.id },
+      callback: window.location.origin,
+      lang: "ru",
+    };
+
+    // Кодируем данные в base64
+    const orderDataEncoded = btoa(JSON.stringify(orderData));
+
+    // Формируем URL для PayMe checkout
+    const paymeUrl = `https://checkout.paycom.uz/${orderDataEncoded}`;
+
+    // Открываем ссылку в новом окне
+    window.open(paymeUrl, "_blank");
+  };
+
+  // Функция для создания прямой ссылки на Click
+  const handleClickPayment = (plan: ProfessionalPlan) => {
+    // Используем демонстрационные данные для Click (заменить на реальные при подключении)
+    const merchantId = "12345"; // ID поставщика
+    const serviceId = "12345"; // ID сервиса
+
+    // Рассчитываем сумму платежа
+    const amount = Math.round(plan.basePrice * (1 - plan.discount));
+
+    // Используем ID плана как идентификатор транзакции
+    const transactionParam = `subscription_${plan.id}_${Date.now()}`;
+
+    // Формируем URL для Click checkout
+    const clickUrl = `https://my.click.uz/services/pay?service_id=${serviceId}&merchant_id=${merchantId}&amount=${amount}&transaction_param=${transactionParam}&return_url=${window.location.origin}`;
+
+    // Открываем ссылку в новом окне
+    window.open(clickUrl, "_blank");
+  };
+
   // Статичные планы для отображения вариантов профессионального плана
   const professionalPlans: ProfessionalPlan[] = [
     {
@@ -131,8 +179,25 @@ export const PricingSection = () => {
                 </ul>
 
                 <div className="mt-10">
-                  <Button asChild className="w-full" variant="primary">
-                    <Link to="/dashboard/subscription">{t`Upgrade`}</Link>
+                  <Button
+                    className="mt-2 w-full"
+                    variant="outline"
+                    disabled={isPaymentLoading[plan.id]}
+                    onClick={() => {
+                      handlePaymePayment(plan);
+                    }}
+                  >
+                    {t`Оплатить через PayMe`}
+                  </Button>
+                  <Button
+                    className="mt-2 w-full"
+                    variant="outline"
+                    disabled={isPaymentLoading[plan.id]}
+                    onClick={() => {
+                      handleClickPayment(plan);
+                    }}
+                  >
+                    {t`Оплатить через Click`}
                   </Button>
                 </div>
               </CardContent>

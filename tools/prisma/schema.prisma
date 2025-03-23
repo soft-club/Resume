@@ -42,6 +42,8 @@ model User {
   resumes          Resume[]
   subscriptions    Subscription[]
   transactions     Transaction[]
+  paymeTransactions PaymeTransaction[]
+  clickTransactions ClickTransaction[]
 }
 
 model Secrets {
@@ -139,4 +141,38 @@ model Transaction {
   updatedAt       DateTime         @updatedAt
   
   @@index(fields: [userId])
+}
+
+model PaymeTransaction {
+  id        String    @id @default(cuid())
+  paymeId   String    @unique // ID от Payme
+  time      Int       // Время создания транзакции (unix timestamp)
+  amount    Float     // Сумма в UZS
+  state     Int       // Состояние транзакции (1: создана, 2: выполнена, -1: отменена, -2: отменена после выполнения)
+  reason    Int?      // Причина отмены (1: возврат пользователя, 2: системный возврат, 3: ошибка платежа)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  userId    String    // ID пользователя
+  
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([paymeId])
+}
+
+model ClickTransaction {
+  id              String    @id @default(cuid())
+  clickTransId    String    // ID транзакции от Click
+  clickPaydocId   String    // ID платежного документа от Click
+  merchantTransId String    // ID транзакции продавца
+  amount          Float     // Сумма в UZS
+  state           Int       // Состояние транзакции (0: создана, 2: выполнена, -1: отменена)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  userId          String    // ID пользователя
+  
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([clickTransId])
 }

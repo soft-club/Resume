@@ -10,6 +10,7 @@ type CreatePaymentIntentDto = {
   currency: string;
   description: string;
   subscriptionId?: string;
+  paymentMethod?: string;
 };
 
 type WebhookRequestBody = {
@@ -36,6 +37,7 @@ export class PaymentController {
       body.description,
       user.id,
       body.subscriptionId,
+      body.paymentMethod ?? "stripe",
     );
   }
 
