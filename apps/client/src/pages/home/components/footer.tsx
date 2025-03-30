@@ -60,6 +60,10 @@ const getNavigation = () => ({
 export const Footer = () => {
   // Получаем навигацию внутри компонента для правильной работы с переводами
   const navigation = getNavigation();
+   
+  // Акцентные цвета для UI - объявляем внутри функции из-за требований лингвиста
+  const accentGradient = t`from-indigo-600 to-violet-600`;
+  const secondaryGradient = t`from-rose-500 to-orange-500`;
 
   return (
     <footer className="bg-background" aria-labelledby="footer-heading">
@@ -80,21 +84,28 @@ export const Footer = () => {
           >
             <div className="flex flex-col space-y-2">
               <div className="flex items-center">
-                <Logo size={48} />
+                <div className="relative">
+                  <div className={`absolute -inset-1 rounded-full bg-gradient-to-r ${accentGradient} blur-sm opacity-70`}></div>
+                  <div className="relative">
+                    <Logo size={48} />
+                  </div>
+                </div>
                 <span className="ml-2 text-2xl font-bold">
-                  <Trans>CV Portfolio</Trans>
+                  <span className={`bg-gradient-to-r ${accentGradient} bg-clip-text text-transparent`}>
+                    <Trans>CV</Trans>
+                  </span> <Trans>Portfolio</Trans>
                 </span>
               </div>
               <a
                 href="https://cvport.uz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-primary hover:underline"
+                className="text-sm text-indigo-600 hover:underline dark:text-indigo-400"
               >
                 cvport.uz
               </a>
             </div>
-            <p className="text-muted-foreground max-w-xs text-base">
+            <p className="max-w-xs text-base text-foreground/70">
               {t`A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.`}
             </p>
             <div className="flex space-x-6">
@@ -102,7 +113,7 @@ export const Footer = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-muted-foreground transition-colors hover:text-primary"
+                  className="transition-transform hover:scale-110 hover:text-indigo-600 dark:hover:text-indigo-400"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.name}
@@ -131,7 +142,7 @@ export const Footer = () => {
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="text-muted-foreground text-base transition-colors hover:text-primary"
+                        className="text-base text-foreground/70 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
                       >
                         {item.name}
                       </Link>
@@ -148,7 +159,7 @@ export const Footer = () => {
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="text-muted-foreground text-base transition-colors hover:text-primary"
+                        className="text-base text-foreground/70 transition-colors hover:text-indigo-600 dark:hover:text-indigo-400"
                       >
                         {item.name}
                       </Link>
@@ -162,7 +173,7 @@ export const Footer = () => {
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
                   {t`Join our newsletter`}
                 </h3>
-                <p className="text-muted-foreground mt-4 text-base">
+                <p className="mt-4 text-base text-foreground/70">
                   {t`Stay updated with the latest features, templates, and news.`}
                 </p>
                 <div className="mt-4 flex lg:max-w-md">
@@ -173,11 +184,11 @@ export const Footer = () => {
                     id="email-address"
                     autoComplete="email"
                     placeholder={t`Enter your email`}
-                    className="w-full min-w-0 flex-1 rounded-l-md border border-border bg-background px-4 py-2 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    className="w-full min-w-0 flex-1 rounded-l-md border border-border bg-background px-4 py-2 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   />
                   <button
                     type="submit"
-                    className="inline-flex items-center rounded-r-md border border-transparent bg-gradient-to-r from-primary to-primary-foreground px-4 py-2 text-base font-medium text-white shadow-sm transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    className="inline-flex items-center rounded-r-md border border-transparent bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 text-base font-medium text-white shadow-sm transition-all hover:shadow-md hover:shadow-indigo-500/30 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                   >
                     {t`Subscribe`}
                   </button>
@@ -193,12 +204,14 @@ export const Footer = () => {
 
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <p className="text-muted-foreground text-base">
+            <p className="text-base text-foreground/70">
               &copy; {new Date().getFullYear()} <Trans>CV Portfolio</Trans>.{" "}
               {t`All rights reserved.`}
             </p>
-            <p className="mt-2 text-sm text-muted-foreground md:mt-0">
-              <Trans>Made with <span role="img" aria-label="heart">❤️</span> in Uzbekistan</Trans>
+            <p className="mt-2 text-sm text-foreground/70 md:mt-0">
+              <Trans>
+                Made with <span role="img" aria-label="heart">❤️</span> in <span className={`bg-gradient-to-r ${secondaryGradient} bg-clip-text font-medium text-transparent`}>Uzbekistan</span>
+              </Trans>
             </p>
           </div>
         </div>

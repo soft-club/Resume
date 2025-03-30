@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { CurrencyDollar, Medal, Star } from "@phosphor-icons/react";
 import { Button, Card, CardContent, CardHeader, CardTitle } from "@reactive-resume/ui";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router";
 
@@ -15,8 +16,27 @@ type ProfessionalPlan = {
   features: Record<string, boolean>;
 };
 
+// Анимация для карточек планов
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      duration: 0.6 
+    } 
+  },
+};
+
 export const PricingSection = () => {
   const [isPaymentLoading] = useState<Record<string, boolean>>({});
+  
+  // Акцентные цвета для UI - такие же как в хедере и футере
+  const accentGradient = "from-indigo-600 to-violet-600";
+  const secondaryGradient = "from-rose-500 to-orange-500";
 
   // Функция для создания прямой ссылки на PayMe
   const handlePaymePayment = (plan: ProfessionalPlan) => {
@@ -119,93 +139,157 @@ export const PricingSection = () => {
   };
 
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t`Pricing`}</h2>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8">
+    <section className="py-24 sm:py-32" id="pricing">
+      <div className="container mx-auto px-6 lg:px-8">
+        <motion.div 
+          className="mx-auto max-w-4xl text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: -20 },
+            visible: { 
+              opacity: 1, 
+              y: 0, 
+              transition: { duration: 0.7 } 
+            }
+          }}
+        >
+          <div className="inline-block">
+            <div className="relative">
+              <div className={`absolute -inset-1 rounded-lg bg-gradient-to-r ${accentGradient} blur opacity-30`}></div>
+              <h2 className="relative text-3xl font-bold tracking-tight sm:text-4xl">
+                <span className={`bg-gradient-to-r ${accentGradient} bg-clip-text text-transparent`}>
+                  {t`Pricing`}
+                </span>
+              </h2>
+            </div>
+          </div>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-foreground/70">
             {t`Our resume builder is always free! Create resumes without limits, and premium features will help make them even better.`}
           </p>
-        </div>
+        </motion.div>
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {professionalPlans.map((plan) => (
-            <Card key={plan.id}>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <div className="rounded-full bg-primary/10 p-2">
-                    {plan.id === "monthly" && (
-                      <CurrencyDollar className="size-6 text-primary" weight="bold" />
-                    )}
-                    {plan.id === "quarterly" && (
-                      <Star className="size-6 text-primary" weight="bold" />
-                    )}
-                    {plan.id === "yearly" && (
-                      <Medal className="size-6 text-primary" weight="bold" />
-                    )}
-                  </div>
-                  <CardTitle className="flex w-full items-center justify-between">
-                    <span>{plan.name}</span>
-                    {plan.discount > 0 && (
-                      <div className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
-                        {t`Save`} {Math.round(plan.discount * 100)}%
+          {professionalPlans.map((plan, index) => (
+            <motion.div
+              key={plan.id}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={index}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card className="group relative h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 dark:hover:shadow-indigo-500/5">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-indigo-600 group-hover:to-violet-600 transition-all duration-300"></div>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="relative">
+                      <div className={`absolute -inset-1 rounded-full bg-gradient-to-r ${plan.id === "yearly" ? secondaryGradient : accentGradient} blur-sm opacity-70`}></div>
+                      <div className="relative rounded-full bg-background/80 p-2">
+                        {plan.id === "monthly" && (
+                          <CurrencyDollar className="size-6 text-indigo-600" weight="bold" />
+                        )}
+                        {plan.id === "quarterly" && (
+                          <Star className="size-6 text-indigo-600" weight="bold" />
+                        )}
+                        {plan.id === "yearly" && (
+                          <Medal className="size-6 text-rose-500" weight="bold" />
+                        )}
                       </div>
-                    )}
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-baseline gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight">
-                    {calculateMonthlyPrice(plan)} {plan.currency}
-                  </span>
-                  <span className="text-base text-gray-500">/{t`monthly`}</span>
-                </div>
-
-                {plan.duration && (
-                  <div className="mt-2 text-sm text-gray-500">
-                    {plan.id === "monthly" && t`Billed monthly`}
-                    {plan.id === "quarterly" && t`Billed quarterly`}
-                    {plan.id === "yearly" && t`Billed yearly`}
+                    </div>
+                    <CardTitle className="flex w-full items-center justify-between">
+                      <span>{plan.name}</span>
+                      {plan.discount > 0 && (
+                        <div className={`
+                          relative inline-flex items-center overflow-hidden rounded-full px-3 py-1 text-xs font-medium
+                          ${plan.id === "yearly" ? "bg-gradient-to-r from-rose-500 to-orange-500" : "bg-gradient-to-r from-indigo-600 to-violet-600"}
+                          text-white shadow-sm
+                        `}>
+                          {t`Save`} {Math.round(plan.discount * 100)}%
+                        </div>
+                      )}
+                    </CardTitle>
                   </div>
-                )}
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-baseline gap-x-2">
+                    <span className={`text-5xl font-bold tracking-tight ${plan.id === "yearly" ? "bg-gradient-to-r from-rose-500 to-orange-500" : "bg-gradient-to-r from-indigo-600 to-violet-600"} bg-clip-text text-transparent`}>
+                      {calculateMonthlyPrice(plan)}
+                    </span>
+                    <span className="text-base text-foreground/60">{plan.currency}/{t`monthly`}</span>
+                  </div>
 
-                <p className="mt-6 text-base leading-7 text-gray-500">{plan.description}</p>
+                  {plan.duration && (
+                    <div className="mt-2 text-sm text-foreground/60">
+                      {plan.id === "monthly" && t`Billed monthly`}
+                      {plan.id === "quarterly" && t`Billed quarterly`}
+                      {plan.id === "yearly" && t`Billed yearly`}
+                    </div>
+                  )}
 
-                <ul className="mt-10 space-y-4 text-sm leading-6">
-                  {Object.entries(plan.features).map(([feature, included]) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <span className={included ? "" : "text-gray-500"}>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p className="mt-6 text-base leading-7 text-foreground/70">{plan.description}</p>
 
-                <div className="mt-10">
-                  <Button asChild className="w-full" variant="primary">
-                    <Link to="/dashboard/subscription">{t`Upgrade`}</Link>
-                  </Button>
-                  <Button
-                    className="mt-2 w-full"
-                    variant="outline"
-                    disabled={isPaymentLoading[plan.id]}
-                    onClick={() => {
-                      handlePaymePayment(plan);
-                    }}
-                  >
-                    {t`Оплатить через PayMe`}
-                  </Button>
-                  <Button
-                    className="mt-2 w-full"
-                    variant="outline"
-                    disabled={isPaymentLoading[plan.id]}
-                    onClick={() => {
-                      handleClickPayment(plan);
-                    }}
-                  >
-                    {t`Оплатить через Click`}
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  <ul className="mt-8 space-y-4 text-sm leading-6">
+                    {Object.entries(plan.features).map(([feature, included]) => (
+                      <li key={feature} className="flex items-center gap-x-3">
+                        <svg
+                          className={`size-5 flex-none ${included ? (plan.id === "yearly" ? "text-rose-500" : "text-indigo-600") : "text-gray-400"}`}
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className={included ? "font-medium" : "text-foreground/60"}>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-10 space-y-3">
+                    <Button
+                      asChild
+                      className={`group relative w-full overflow-hidden ${
+                        plan.id === "yearly" 
+                          ? "bg-gradient-to-r from-rose-500 to-orange-500 hover:shadow-rose-500/30" 
+                          : "bg-gradient-to-r from-indigo-600 to-violet-600 hover:shadow-indigo-500/30"
+                      } transition-all duration-300 hover:shadow-lg`}
+                    >
+                      <Link to="/dashboard/subscription">
+                        <span className="absolute inset-0 bg-white/10 opacity-0 transition-opacity group-hover:opacity-100"></span>
+                        <span className="relative">{t`Upgrade`}</span>
+                      </Link>
+                    </Button>
+                    <div className="grid grid-cols-2 gap-3">
+                      <Button
+                        className="relative overflow-hidden bg-background/5 transition-all duration-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/20"
+                        variant="outline"
+                        disabled={isPaymentLoading[plan.id]}
+                        onClick={() => {
+                          handlePaymePayment(plan);
+                        }}
+                      >
+                        <span className="relative">{t`PayMe`}</span>
+                      </Button>
+                      <Button
+                        className="relative overflow-hidden bg-background/5 transition-all duration-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/20"
+                        variant="outline"
+                        disabled={isPaymentLoading[plan.id]}
+                        onClick={() => {
+                          handleClickPayment(plan);
+                        }}
+                      >
+                        <span className="relative">{t`Click`}</span>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
