@@ -1,6 +1,8 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 
+import { ClickController } from "./click/click.controller";
+import { ClickService } from "./click/click.service";
 import { SubscriptionGuard } from "./decorators/has-active-subscription.decorator";
 import { PaymeController } from "./payme/payme.controller";
 import { PaymeService } from "./payme/payme.service";
@@ -10,8 +12,6 @@ import { SubscriptionController } from "./subscription.controller";
 import { SubscriptionService } from "./subscription.service";
 import { SubscriptionPlanService } from "./subscription-plan.service";
 import { TransactionService } from "./transaction.service";
-import { ClickController } from "./click/click.controller";
-import { ClickService } from "./click/click.service";
 
 @Module({
   imports: [ConfigModule],

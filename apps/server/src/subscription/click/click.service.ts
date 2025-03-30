@@ -129,8 +129,6 @@ export class ClickService {
         );
       }
 
-      const planId = parts[1];
-
       // Извлекаем userId из параметров транзакции
       // В реальном приложении здесь будет логика получения userId
       // Сейчас просто используем демонстрационный ID
@@ -213,17 +211,16 @@ export class ClickService {
 
     try {
       // Находим транзакцию по merchant_prepare_id
-      const clickTransactions = await this.prisma
-        .$queryRawUnsafe<ClickTransactionRecord[]>(
-          `
+      const clickTransactions = await this.prisma.$queryRawUnsafe<ClickTransactionRecord[]>(
+        `
         SELECT * FROM "ClickTransaction" 
         WHERE "id" = '${request.merchant_prepare_id}'
         AND "clickTransId" = '${request.click_trans_id}'
         AND "merchantTransId" = '${request.merchant_trans_id}'
         LIMIT 1
       `,
-        );
-      
+      );
+
       if (clickTransactions.length === 0) {
         return this.generateCompleteErrorResponse(
           request.click_trans_id,
@@ -232,9 +229,9 @@ export class ClickService {
           "Transaction not found",
         );
       }
-      
+
       const clickTransaction = clickTransactions[0];
-      
+
       // Проверяем состояние транзакции
       if (clickTransaction.state === 2) {
         // Если транзакция уже выполнена, возвращаем успешный результат
@@ -269,22 +266,9 @@ export class ClickService {
         )
         .then((rows) => rows[0]);
 
-      // Создаем запись о транзакции в основной таблице транзакций
-      const transaction = await this.transactionService.create({
-        amount: request.amount,
-        currency: "UZS",
-        description: `Subscription payment via Click: ${request.merchant_trans_id}`,
-        paymentId: clickTransaction.id,
-        paymentMethod: "click",
-        status: "completed",
-        user: { connect: { id: clickTransaction.userId } },
-      });
-
       // Разбор merchant_trans_id для получения информации о подписке
       const parts = request.merchant_trans_id.split("_");
       if (parts.length >= 2 && parts[0] === "subscription") {
-        const planId = parts[1];
-
         // Логика создания или обновления подписки
         // В реальном приложении здесь будет код для создания/обновления подписки
         // Для демонстрации предполагаем, что подписка уже существует и нужно её активировать

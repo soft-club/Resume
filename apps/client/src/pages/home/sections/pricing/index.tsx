@@ -2,6 +2,7 @@ import { t } from "@lingui/macro";
 import { CurrencyDollar, Medal, Star } from "@phosphor-icons/react";
 import { Button, Card, CardContent, CardHeader, CardTitle } from "@reactive-resume/ui";
 import { useState } from "react";
+import { Link } from "react-router";
 
 type ProfessionalPlan = {
   id: string;
@@ -49,16 +50,16 @@ export const PricingSection = () => {
     // Используем демонстрационные данные для Click (заменить на реальные при подключении)
     const merchantId = "12345"; // ID поставщика
     const serviceId = "12345"; // ID сервиса
-
+    
     // Рассчитываем сумму платежа
     const amount = Math.round(plan.basePrice * (1 - plan.discount));
-
+    
     // Используем ID плана как идентификатор транзакции
     const transactionParam = `subscription_${plan.id}_${Date.now()}`;
-
+    
     // Формируем URL для Click checkout
     const clickUrl = `https://my.click.uz/services/pay?service_id=${serviceId}&merchant_id=${merchantId}&amount=${amount}&transaction_param=${transactionParam}&return_url=${window.location.origin}`;
-
+    
     // Открываем ссылку в новом окне
     window.open(clickUrl, "_blank");
   };
@@ -179,6 +180,9 @@ export const PricingSection = () => {
                 </ul>
 
                 <div className="mt-10">
+                  <Button asChild className="w-full" variant="primary">
+                    <Link to="/dashboard/subscription">{t`Upgrade`}</Link>
+                  </Button>
                   <Button
                     className="mt-2 w-full"
                     variant="outline"
