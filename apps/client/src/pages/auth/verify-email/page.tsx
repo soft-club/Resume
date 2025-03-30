@@ -1,6 +1,15 @@
 import { t, Trans } from "@lingui/macro";
 import { ArrowRight, Info, SealCheck } from "@phosphor-icons/react";
-import { Alert, AlertDescription, AlertTitle, Button } from "@reactive-resume/ui";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@reactive-resume/ui";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useNavigate, useSearchParams } from "react-router";
@@ -37,37 +46,57 @@ export const VerifyEmailPage = () => {
   }, [token, navigate, verifyEmail]);
 
   return (
-    <div className="space-y-6">
+    <div className="flex min-h-[80vh] items-center justify-center">
       <Helmet>
         <title>
           {t`Verify your email address`} - {t`Reactive Resume`}
         </title>
       </Helmet>
 
-      <div className="space-y-2">
-        <h2 className="text-2xl font-semibold tracking-tight">{t`Verify your email address`}</h2>
-        <p className="leading-relaxed opacity-75">
-          <Trans>
-            You should have received an email from <strong>Reactive Resume</strong> with a link to
-            verify your account.
-          </Trans>
-        </p>
-      </div>
+      <Card className="w-full max-w-md shadow-lg">
+        <CardHeader className="pb-2">
+          <div className="flex items-center gap-4">
+            <div className="shrink-0">
+              <img
+                src="/logo/light.svg"
+                alt={t`Reactive Resume Logo`}
+                className="size-10 dark:hidden"
+              />
+              <img
+                src="/logo/dark.svg"
+                alt={t`Reactive Resume Logo`}
+                className="hidden size-10 dark:block"
+              />
+            </div>
+            <div>
+              <CardTitle className="text-2xl font-bold">{t`Verify email`}</CardTitle>
+              <p className="text-muted-foreground text-sm">
+                <Trans>
+                  You should have received an email from <strong>Reactive Resume</strong> with a
+                  verification link.
+                </Trans>
+              </p>
+            </div>
+          </div>
+        </CardHeader>
 
-      <Alert variant="info">
-        <Info size={18} />
-        <AlertTitle>{t`Please note that this step is completely optional.`}</AlertTitle>
-        <AlertDescription>
-          {t`We verify your email address only to ensure that we can send you a password reset link in case you forget your password.`}
-        </AlertDescription>
-      </Alert>
+        <CardContent className="space-y-5 pt-4">
+          <Alert variant="info">
+            <Info size={18} />
+            <AlertTitle>{t`Please note that this step is completely optional.`}</AlertTitle>
+            <AlertDescription>
+              {t`We verify your email address only to ensure that we can send you a password reset link in case you forget your password.`}
+            </AlertDescription>
+          </Alert>
 
-      <Button asChild disabled={loading}>
-        <Link to="/dashboard">
-          {t`Go to Dashboard`}
-          <ArrowRight className="ml-2" />
-        </Link>
-      </Button>
+          <Button asChild disabled={loading} className="w-full">
+            <Link to="/dashboard">
+              {t`Go to Dashboard`}
+              <ArrowRight className="ml-2 size-4" />
+            </Link>
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 };

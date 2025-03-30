@@ -1,5 +1,4 @@
-import { t } from "@lingui/macro";
-import { cn } from "@reactive-resume/utils";
+import { Trans } from "@lingui/macro";
 import { useMemo } from "react";
 import { Link, matchRoutes, Outlet, useLocation } from "react-router";
 
@@ -23,15 +22,17 @@ export const AuthLayout = () => {
   const hideDivider = !providers.includes("email") || providers.length === 1;
 
   return (
-    // eslint-disable-next-line tailwindcss/enforces-shorthand -- size-screen not implemented yet
-    <div className="flex h-screen w-screen">
-      <div className="relative flex w-full flex-col justify-center gap-y-8 px-12 sm:mx-auto sm:basis-[420px] sm:px-0 lg:basis-[480px] lg:px-12">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="size-24">
-            <Logo className="-ml-3" size={96} />
+    <div className="flex min-h-screen items-center justify-center p-4 md:p-8">
+      <div className="relative w-full max-w-md">
+        <div className="absolute inset-x-0 -top-10 mx-auto flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <Logo size={40} />
+            <span className="text-xl font-bold">
+              <Trans>Reactive Resume</Trans>
+            </span>
           </Link>
 
-          <div className="right-0 space-x-2 text-right lg:absolute lg:p-12 lg:text-center">
+          <div className="space-x-2">
             <LocaleSwitch />
             <ThemeSwitch />
           </div>
@@ -39,43 +40,11 @@ export const AuthLayout = () => {
 
         <Outlet />
 
-        {isAuthRoute && (
-          <>
-            <div className={cn("flex items-center gap-x-4", hideDivider && "hidden")}>
-              <hr className="flex-1" />
-              <span className="text-xs font-medium">
-                {t({
-                  message: "or continue with",
-                  context:
-                    "The user can either login with email/password, or continue with GitHub or Google.",
-                })}
-              </span>
-              <hr className="flex-1" />
-            </div>
-
+        {isAuthRoute && !hideDivider && (
+          <div className="mt-6">
             <SocialAuth />
-          </>
+          </div>
         )}
-      </div>
-
-      <div className="relative hidden lg:block lg:flex-1">
-        <img
-          width={1920}
-          height={1080}
-          alt="Open books on a table"
-          className="h-screen w-full object-cover object-center"
-          src="/backgrounds/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
-        />
-
-        <div className="absolute bottom-5 right-5 z-10 bg-primary/30 px-4 py-2 text-xs font-medium text-primary-foreground backdrop-blur-sm">
-          <a
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            href="https://unsplash.com/photos/Oaqk7qqNh_c"
-          >
-            {t`Photograph by Patrick Tomasso`}
-          </a>
-        </div>
       </div>
     </div>
   );
