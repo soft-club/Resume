@@ -1,6 +1,7 @@
 import { t } from "@lingui/macro";
 import { useLingui } from "@lingui/react";
-import { lazy, memo, Suspense, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { lazy, memo, Suspense, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 // import { ContributorsSection } from "./sections/contributors";
@@ -128,6 +129,296 @@ const SectionDivider = () => (
   </div>
 );
 
+// Компонент кнопки прокрутки вверх
+const ScrollToTopButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Отслеживаем прокрутку страницы
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Показываем кнопку, когда прокручено больше 500px
+      setIsVisible(window.scrollY > 500);
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.button
+          type="button"
+          className="fixed bottom-6 right-6 z-50 flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-lg ring-1 ring-black/10 transition-colors hover:bg-primary/90"
+          aria-label={t`Scroll to top`}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ y: -3 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={handleScrollToTop}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+};
+
+// Компонент плавающей кнопки быстрого действия (FAB)
+const FloatingActionButton = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleCreateResume = () => {
+    // Дополнительная логика для создания резюме
+    window.location.href = "/builder/resume/new";
+  };
+
+  const handleCreateFromTemplate = () => {
+    // Перенаправление на страницу с шаблонами
+    window.location.href = "#templates";
+  };
+
+  return (
+    <div className="fixed bottom-6 left-6 z-50">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="absolute bottom-16 left-1 flex flex-col space-y-3"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+          >
+            <motion.button
+              className="flex items-center space-x-2 rounded-full bg-white px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-black/10"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={t`Create from template`}
+              onClick={handleCreateFromTemplate}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5 text-primary"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                />
+              </svg>
+              <span>{t`From template`}</span>
+            </motion.button>
+
+            <motion.button
+              className="flex items-center space-x-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={t`Create new resume`}
+              onClick={handleCreateResume}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="size-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+              <span>{t`New resume`}</span>
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.button
+        className={`flex size-14 items-center justify-center rounded-full shadow-lg ${isOpen ? "bg-gray-700" : "bg-primary"} text-white transition-colors`}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label={isOpen ? t`Close menu` : t`Create resume`}
+        aria-expanded={isOpen}
+        onClick={toggleOpen}
+      >
+        <AnimatePresence mode="wait">
+          {isOpen ? (
+            <motion.svg
+              key="close"
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </motion.svg>
+          ) : (
+            <motion.svg
+              key="create"
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              />
+            </motion.svg>
+          )}
+        </AnimatePresence>
+      </motion.button>
+    </div>
+  );
+};
+
+// Компонент статистики с анимацией
+const StatisticsSection = () => {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Наблюдаем за появлением секции в видимой области
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect(); // Остановка наблюдения после срабатывания
+          }
+        }
+      },
+      { threshold: 0.2 }, // Активируется, когда 20% секции видно
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Статистические данные
+  const stats = [
+    { id: 1, name: t`Users`, value: "50K+", delay: 0 },
+    { id: 2, name: t`Resumes Created`, value: "100K+", delay: 0.1 },
+    { id: 3, name: t`Job Offers`, value: "8K+", delay: 0.2 },
+    { id: 4, name: t`Countries`, value: "180+", delay: 0.3 },
+  ];
+
+  return (
+    <section ref={sectionRef} className="relative py-12 sm:py-16 lg:py-24">
+      {/* Фоновый паттерн */}
+      <div className="absolute inset-0 -z-10 opacity-5">
+        <svg width="100%" height="100%" className="text-gray-900" stroke="currentColor">
+          <pattern
+            id="statsPattern"
+            x="0"
+            y="0"
+            width="20"
+            height="20"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M0 10h20M10 0v20" fill="none" strokeWidth="0.5" />
+          </pattern>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#statsPattern)" />
+        </svg>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:max-w-none">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              {t`Trusted by thousands worldwide`}
+            </h2>
+            <p className="text-muted-foreground mt-4 text-lg">
+              {t`Join our community of job seekers who have successfully used our platform to advance their careers.`}
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4 lg:mt-16 lg:gap-12">
+            {stats.map((stat) => (
+              <motion.div
+                key={stat.id}
+                className="overflow-hidden rounded-lg bg-primary/5 px-4 py-6 text-center shadow-sm sm:px-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: stat.delay, ease: "easeOut" }}
+              >
+                <motion.dt
+                  className="text-muted-foreground truncate text-sm font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={visible ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.6, delay: stat.delay + 0.2 }}
+                >
+                  {stat.name}
+                </motion.dt>
+                <motion.dd
+                  className="mt-1 text-3xl font-semibold tracking-tight text-primary sm:text-4xl"
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={visible ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
+                  transition={{ duration: 0.6, delay: stat.delay + 0.3, type: "spring" }}
+                >
+                  {stat.value}
+                </motion.dd>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const HomePage = memo(() => {
   const { i18n } = useLingui();
 
@@ -150,6 +441,12 @@ export const HomePage = memo(() => {
           }}
         />
       </div>
+
+      {/* Кнопка прокрутки вверх */}
+      <ScrollToTopButton />
+
+      {/* Плавающая кнопка действия */}
+      <FloatingActionButton />
 
       <Helmet prioritizeSeoTags>
         <html lang={i18n.locale} />
@@ -181,6 +478,13 @@ export const HomePage = memo(() => {
       <Suspense fallback={<SectionLoader />}>
         <HeroSection />
       </Suspense>
+
+      <SectionDivider />
+
+      {/* Секция статистики */}
+      <div id="statistics">
+        <StatisticsSection />
+      </div>
 
       <SectionDivider />
 

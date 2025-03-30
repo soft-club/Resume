@@ -1,6 +1,6 @@
 import { t } from "@lingui/macro";
 import { motion } from "framer-motion";
-import { lazy, memo, Suspense, useEffect } from "react";
+import { lazy, memo, Suspense, useEffect, useState } from "react";
 
 // Ленивая загрузка компонентов
 const HeroCTA = lazy(() => import("./call-to-action").then((m) => ({ default: memo(m.HeroCTA) })));
@@ -38,6 +38,16 @@ const staggerChildren = {
 };
 
 export const HeroSection = memo(() => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <section id="hero" className="relative overflow-hidden pt-24 sm:pt-32">
       <ImagePreloader />
@@ -95,10 +105,35 @@ export const HeroSection = memo(() => {
 
             <a
               href="#templates"
-              className="hover:bg-muted inline-flex h-12 items-center gap-x-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-foreground shadow-sm ring-1 ring-inset ring-border transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="group relative inline-flex h-12 items-center gap-x-2 overflow-hidden rounded-lg px-4 py-2.5 text-sm font-semibold text-foreground shadow-sm ring-1 ring-inset ring-border transition-all duration-300 hover:pl-10 hover:pr-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               tabIndex={0}
               aria-label={t`View templates`}
+              // onMouseEnter={onmouseenter}
+              // onMouseLeave={onmouseleave}
+              // onFocus={onmouseenter}
+              // onBlur={onmouseleave}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.currentTarget.click();
+                }
+              }}
             >
+              <span className="absolute left-0 -translate-x-full opacity-0 transition-all duration-200 group-hover:translate-x-3 group-hover:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </span>
               {t`View templates`}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +141,7 @@ export const HeroSection = memo(() => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-5"
+                className="size-5 transition-transform duration-300 group-hover:translate-x-1"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>
@@ -124,20 +159,46 @@ export const HeroSection = memo(() => {
           {/* Декоративный эффект сияния за скриншотом */}
           <div className="absolute -inset-4 -z-10 bg-[radial-gradient(closest-side,rgba(var(--primary-rgb),0.1),transparent)]" />
 
-          <div className="bg-card relative overflow-hidden rounded-xl border border-border/40 shadow-xl">
-            {/* Блик на скриншоте */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            <img
-              src="/screenshots/builder.jpg"
-              alt="Builder Screenshot"
-              className="w-full object-cover shadow-sm"
-              loading="eager"
-              fetchPriority="high"
+          <div
+            className="bg-card group relative overflow-hidden rounded-xl border border-border/40 shadow-xl transition-transform duration-500 hover:scale-[1.02]"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Интерактивный блик на скриншоте */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-transparent opacity-0 transition-opacity duration-700 ${isHovered ? 'opacity-100' : ''}`}
             />
-
+            {/* Эффект движения при наведении */}
+            {isHovered ? (
+              <motion.div
+                className="relative"
+                animate={{ y: -5, x: -5 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src="/screenshots/builder.jpg"
+                />
+              </motion.div>
+            ) : (
+              <motion.div
+                className="relative"
+                animate={{ y: 0, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src="/screenshots/builder.jpg"
+                />
+              </motion.div>
+            )}
             {/* Глянцевый эффект */}
             <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10" />
+
+            {/* Бирка "Featured" */}
+            <div className="absolute right-0 top-0 -mr-3 -mt-3 overflow-hidden pr-3 pt-3">
+              <div className="relative translate-x-2 rotate-45 bg-primary px-3 py-1 text-xs font-medium text-white shadow-md">
+                {t`Featured`}
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
