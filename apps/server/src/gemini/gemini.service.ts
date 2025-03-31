@@ -62,36 +62,36 @@ export class GeminiService implements OnModuleInit {
 
   async improveWriting(text: string): Promise<string> {
     const prompt = `You are an AI writing assistant specialized in writing copy for resumes.
-Do not return anything else except the text you improved. It should not begin with a newline. It should not have any prefix or suffix text.
+Do not return anything else except the text you improved in the format you received it. It should not begin with a newline. It should not have any prefix or suffix text.
 Improve the writing of the following paragraph and returns in the language of the text:
 
 Text: """${text}"""
 
-Revised Text: """`;
+Revised Text: `;
 
     return this.generateContent(prompt);
   }
 
   async fixGrammar(text: string): Promise<string> {
     const prompt = `You are an AI writing assistant specialized in fixing grammar.
-Do not return anything else except the text you fixed. It should not begin with a newline. It should not have any prefix or suffix text.
+Do not return anything else except the text you fixed in the format you received it. It should not begin with a newline. It should not have any prefix or suffix text.
 Fix the grammar of the following text and return in the same language:
 
 Text: """${text}"""
 
-Fixed Text: """`;
+Fixed Text: `;
 
     return this.generateContent(prompt);
   }
 
   async changeTone(text: string, tone: string): Promise<string> {
     const prompt = `You are an AI writing assistant specialized in changing the tone of text.
-Do not return anything else except the modified text. It should not begin with a newline. It should not have any prefix or suffix text.
+Do not return anything else except the modified text in the format you received it. It should not begin with a newline. It should not have any prefix or suffix text.
 Change the tone of the following text to be more ${tone} and return in the same language:
 
 Text: """${text}"""
 
-Modified Text: """`;
+Modified Text: `;
 
     return this.generateContent(prompt);
   }
